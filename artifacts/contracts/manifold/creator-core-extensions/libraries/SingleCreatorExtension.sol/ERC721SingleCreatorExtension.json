@@ -1,0 +1,24 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ERC721SingleCreatorExtension",
+  "sourceName": "contracts/manifold/creator-core-extensions/libraries/SingleCreatorExtension.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "creatorContract",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

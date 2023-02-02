@@ -1,0 +1,434 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for manifold/royalty-registry/overrides/RoyaltyOverrideCore.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">manifold/royalty-registry/overrides/</a> RoyaltyOverrideCore.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/23</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+&nbsp;
+pragma solidity ^0.8.0;
+&nbsp;
+/// @author: manifold.xyz
+&nbsp;
+import "../../../openzeppelin/utils/introspection/ERC165.sol";
+import "../../../openzeppelin/utils/structs/EnumerableSet.sol";
+&nbsp;
+import "./IRoyaltyOverride.sol";
+import "../specs/IEIP2981.sol";
+&nbsp;
+/**
+ * Simple EIP2981 reference override implementation
+ */
+abstract contract EIP2981RoyaltyOverrideCore is
+    IEIP2981,
+    IEIP2981RoyaltyOverride,
+    ERC165
+{
+    using EnumerableSet for EnumerableSet.UintSet;
+&nbsp;
+    TokenRoyalty public defaultRoyalty;
+    mapping(uint256 =&gt; TokenRoyalty) private _tokenRoyalties;
+    EnumerableSet.UintSet private _tokensWithRoyalties;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function supportsInterface(bytes4 interfaceId)</span>
+        public
+        view
+        virtual
+        override(ERC165, IERC165)
+        returns (bool)
+    {
+<span class="cstat-no" title="statement not covered" >        return</span>
+            interfaceId == type(IEIP2981).interfaceId ||
+            interfaceId == type(IEIP2981RoyaltyOverride).interfaceId ||
+            super.supportsInterface(interfaceId);
+    }
+&nbsp;
+    /**
+     * @dev Sets token royalties. When you override this in the implementation contract
+     * ensure that you access restrict it to the contract owner or admin
+     */
+<span class="fstat-no" title="function not covered" >    function _setTokenRoyalties(TokenRoyaltyConfig[] memory royaltyConfigs)</span>
+        internal
+    {
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; royaltyConfigs.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            TokenRoyaltyConfig memory royaltyConfig = royaltyConfigs[i];</span>
+<span class="cstat-no" title="statement not covered" >            require(royaltyConfig.bps &lt; 10000, "Invalid bps")</span>;
+<span class="cstat-no" title="statement not covered" >            if (royaltyConfig.recipient == address(0)) {</span>
+                delete _tokenRoyalties[royaltyConfig.tokenId];
+<span class="cstat-no" title="statement not covered" >                _tokensWithRoyalties.remove(royaltyConfig.tokenId)</span>;
+<span class="cstat-no" title="statement not covered" >                emit TokenRoyaltyRemoved(royaltyConfig.tokenId);</span>
+            } else {
+<span class="cstat-no" title="statement not covered" >                _tokenRoyalties[royaltyConfig.tokenId] = TokenRoyalty(</span>
+                    royaltyConfig.recipient,
+                    royaltyConfig.bps
+                );
+<span class="cstat-no" title="statement not covered" >                _tokensWithRoyalties.add(royaltyConfig.tokenId)</span>;
+<span class="cstat-no" title="statement not covered" >                emit TokenRoyaltySet(</span>
+                    royaltyConfig.tokenId,
+                    royaltyConfig.recipient,
+                    royaltyConfig.bps
+                );
+            }
+        }
+    }
+&nbsp;
+    /**
+     * @dev Sets default royalty. When you override this in the implementation contract
+     * ensure that you access restrict it to the contract owner or admin
+     */
+<span class="fstat-no" title="function not covered" >    function _setDefaultRoyalty(TokenRoyalty memory royalty) internal {</span>
+<span class="cstat-no" title="statement not covered" >        require(royalty.bps &lt; 10000, "Invalid bps")</span>;
+<span class="cstat-no" title="statement not covered" >        defaultRoyalty = TokenRoyalty(royalty.recipient, royalty.bps)</span>;
+<span class="cstat-no" title="statement not covered" >        emit DefaultRoyaltySet(royalty.recipient, royalty.bps);</span>
+    }
+&nbsp;
+    /**
+     * @dev See {IEIP2981RoyaltyOverride-getTokenRoyaltiesCount}.
+     */
+<span class="fstat-no" title="function not covered" >    function getTokenRoyaltiesCount() external view override returns (uint256) {</span>
+<span class="cstat-no" title="statement not covered" >        return _tokensWithRoyalties.length();</span>
+    }
+&nbsp;
+    /**
+     * @dev See {IEIP2981RoyaltyOverride-getTokenRoyaltyByIndex}.
+     */
+<span class="fstat-no" title="function not covered" >    function getTokenRoyaltyByIndex(uint256 index)</span>
+        external
+        view
+        override
+        returns (TokenRoyaltyConfig memory)
+    {
+<span class="cstat-no" title="statement not covered" >        uint256 tokenId = _tokensWithRoyalties.at(index);</span>
+<span class="cstat-no" title="statement not covered" >        TokenRoyalty memory royalty = _tokenRoyalties[tokenId];</span>
+<span class="cstat-no" title="statement not covered" >        return TokenRoyaltyConfig(tokenId, royalty.recipient, royalty.bps);</span>
+    }
+&nbsp;
+    /**
+     * @dev See {IEIP2981RoyaltyOverride-royaltyInfo}.
+     */
+<span class="fstat-no" title="function not covered" >    function royaltyInfo(uint256 tokenId, uint256 value)</span>
+        public
+        view
+        override
+        returns (address, uint256)
+    {
+<span class="cstat-no" title="statement not covered" >        if (_tokenRoyalties[tokenId].recipient != address(0)) {</span>
+<span class="cstat-no" title="statement not covered" >            return (</span>
+                _tokenRoyalties[tokenId].recipient,
+                (value * _tokenRoyalties[tokenId].bps) / 10000
+            );
+        }
+<span class="cstat-no" title="statement not covered" >        if (defaultRoyalty.recipient != address(0) &amp;&amp; defaultRoyalty.bps != 0) {</span>
+<span class="cstat-no" title="statement not covered" >            return (</span>
+                defaultRoyalty.recipient,
+                (value * defaultRoyalty.bps) / 10000
+            );
+        }
+<span class="cstat-no" title="statement not covered" >        return (address(0), 0);</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jul 18 2022 12:17:17 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "INiftyBuilderInstance",
+  "sourceName": "contracts/manifold/royalty-registry/specs/INiftyGateway.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "niftyRegistryContract",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x",
+  "deployedBytecode": "0x",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

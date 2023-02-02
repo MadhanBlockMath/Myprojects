@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for manifold/creator-core/core/ERC721CreatorCore.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">manifold/creator-core/core/</a> ERC721CreatorCore.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">11.11% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>2/18</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">4.55% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>1/22</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">37.5% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>2/20</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">45×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">50×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+&nbsp;
+pragma solidity ^0.8.0;
+&nbsp;
+/// @author: manifold.xyz
+&nbsp;
+import "../../../openzeppelin/utils/structs/EnumerableSet.sol";
+&nbsp;
+import "../extensions/ERC721/IERC721CreatorExtensionApproveTransfer.sol";
+import "../extensions/ERC721/IERC721CreatorExtensionBurnable.sol";
+import "../permissions/ERC721/IERC721CreatorMintPermissions.sol";
+import "./IERC721CreatorCore.sol";
+import "./CreatorCore.sol";
+&nbsp;
+/**
+ * @dev Core ERC721 creator implementation
+ */
+abstract contract ERC721CreatorCore is CreatorCore, IERC721CreatorCore {
+    using EnumerableSet for EnumerableSet.AddressSet;
+&nbsp;
+    /**
+     * @dev See {IERC165-supportsInterface}.
+     */
+    function supportsInterface(bytes4 interfaceId)
+        public
+        view
+        virtual
+        override(CreatorCore, IERC165)
+        returns (bool)
+    {
+        return
+            interfaceId == type(IERC721CreatorCore).interfaceId ||
+            super.supportsInterface(interfaceId);
+    }
+&nbsp;
+    /**
+     * @dev See {ICreatorCore-setApproveTransferExtension}.
+     */
+<span class="fstat-no" title="function not covered" >    function setApproveTransferExtension(bool enabled)</span>
+        external
+        override
+        extensionRequired
+    {
+<span class="cstat-no" title="statement not covered" >        require(</span>
+            !enabled ||
+                ERC165Checker.supportsInterface(
+                    msg.sender,
+                    type(IERC721CreatorExtensionApproveTransfer).interfaceId
+                ),
+            "Extension must implement IERC721CreatorExtensionApproveTransfer"
+        );
+<span class="cstat-no" title="statement not covered" >        if (_extensionApproveTransfers[msg.sender] != enabled) {</span>
+<span class="cstat-no" title="statement not covered" >            _extensionApproveTransfers[msg.sender] = enabled</span>;
+<span class="cstat-no" title="statement not covered" >            emit ExtensionApproveTransferUpdated(msg.sender, enabled);</span>
+        }
+    }
+&nbsp;
+    /**
+     * @dev Set mint permissions for an extension
+     */
+<span class="fstat-no" title="function not covered" >    function _setMintPermissions(address extension, address permissions)</span>
+        internal
+    {
+<span class="cstat-no" title="statement not covered" >        require(</span>
+            _extensions.contains(extension),
+            "CreatorCore: Invalid extension"
+        );
+<span class="cstat-no" title="statement not covered" >        require(</span>
+            permissions == address(0x0) ||
+                ERC165Checker.supportsInterface(
+                    permissions,
+                    type(IERC721CreatorMintPermissions).interfaceId
+                ),
+            "Invalid address"
+        );
+<span class="cstat-no" title="statement not covered" >        if (_extensionPermissions[extension] != permissions) {</span>
+<span class="cstat-no" title="statement not covered" >            _extensionPermissions[extension] = permissions</span>;
+<span class="cstat-no" title="statement not covered" >            emit MintPermissionsUpdated(extension, permissions, msg.sender);</span>
+        }
+    }
+&nbsp;
+    /**
+     * Check if an extension can mint
+     */
+<span class="fstat-no" title="function not covered" >    function _checkMintPermissions(address to, uint256 tokenId) internal {</span>
+<span class="cstat-no" title="statement not covered" >        if (_extensionPermissions[msg.sender] != address(0x0)) {</span>
+<span class="cstat-no" title="statement not covered" >            IERC721CreatorMintPermissions(_extensionPermissions[msg.sender])</span>
+                .approveMint(msg.sender, to, tokenId);
+        }
+    }
+&nbsp;
+    /**
+     * Override for post mint actions
+     */
+    function _postMintBase(address, uint256) internal virtual {}
+&nbsp;
+    /**
+     * Override for post mint actions
+     */
+<span class="fstat-no" title="function not covered" >    function _postMintExtension(address, uint256) internal virtual {}</span>
+&nbsp;
+    /**
+     * Post-burning callback and metadata cleanup
+     */
+<span class="fstat-no" title="function not covered" >    function _postBurn(address owner, uint256 tokenId) internal virtual {</span>
+        // Callback to originating extension if needed
+<span class="cstat-no" title="statement not covered" >        if (_tokensExtension[tokenId] != address(this)) {</span>
+<span class="cstat-no" title="statement not covered" >            if (</span>
+                ERC165Checker.supportsInterface(
+                    _tokensExtension[tokenId],
+                    type(IERC721CreatorExtensionBurnable).interfaceId
+                )
+            ) {
+<span class="cstat-no" title="statement not covered" >                IERC721CreatorExtensionBurnable(_tokensExtension[tokenId])</span>
+                    .onBurn(owner, tokenId);
+            }
+        }
+        // Clear metadata (if any)
+<span class="cstat-no" title="statement not covered" >        if (bytes(_tokenURIs[tokenId]).length != 0) {</span>
+            delete _tokenURIs[tokenId];
+        }
+        // Delete token origin extension tracking
+        delete _tokensExtension[tokenId];
+    }
+&nbsp;
+    /**
+     * Approve a transfer
+     */
+    function _approveTransfer(
+        address from,
+        address to,
+        uint256 tokenId
+    ) internal {
+        <span class="missing-if-branch" title="if path not taken" >I</span>if (_extensionApproveTransfers[_tokensExtension[tokenId]]) {
+<span class="cstat-no" title="statement not covered" >            require(</span>
+                IERC721CreatorExtensionApproveTransfer(
+                    _tokensExtension[tokenId]
+                ).approveTransfer(from, to, tokenId),
+                "ERC721Creator: Extension approval failure"
+            );
+        }
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jul 18 2022 12:17:17 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

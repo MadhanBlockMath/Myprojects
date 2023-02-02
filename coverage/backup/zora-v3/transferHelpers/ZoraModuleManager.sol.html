@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for backup/zora-v3/transferHelpers/ZoraModuleManager.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../prettify.css" />
+    <link rel="stylesheet" href="../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../index.html">all files</a> / <a href="index.html">backup/zora-v3/transferHelpers/</a> ZoraModuleManager.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/24</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/14</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/10</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/28</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.0;
+&nbsp;
+import {ZoraProtocolFeeSettings} from "../auxiliary/ZoraProtocolFeeSettings/ZoraProtocolFeeSettings.sol";
+&nbsp;
+/// @title ZoraModuleManager
+/// @author tbtstl &lt;t@zora.co&gt;
+/// @notice This contract allows users to approve registered modules on ZORA V3
+contract ZoraModuleManager {
+    /// @dev keccak256("SignedApproval(address module,address user,bool approved,uint256 deadline,uint256 nonce)")
+    bytes32 private constant SIGNED_APPROVAL_TYPEHASH = 0x8413132cc7aa5bd2ce1a1b142a3f09e2baeda86addf4f9a5dacd4679f56e7cec;
+&nbsp;
+    bytes32 private immutable EIP_712_DOMAIN_SEPARATOR =
+        keccak256(
+            abi.encode(
+                keccak256("EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)"),
+                keccak256(bytes("ZORA")),
+                keccak256(bytes("3")),
+                _chainID(),
+                address(this)
+            )
+        );
+&nbsp;
+    /// @notice The module fee NFT contract to mint from upon module registration
+    ZoraProtocolFeeSettings public immutable moduleFeeToken;
+&nbsp;
+    /// @notice The registrar address that can register modules
+    address public registrar;
+&nbsp;
+    /// @notice Mapping of users and modules to approved status
+    /// @dev User address =&gt; Module address =&gt; Approved
+    mapping(address =&gt; mapping(address =&gt; bool)) public userApprovals;
+&nbsp;
+    /// @notice Mapping of modules to registered status
+    /// @dev Module address =&gt; Registered
+    mapping(address =&gt; bool) public moduleRegistered;
+&nbsp;
+    /// @notice The signature nonces for 3rd party module approvals
+    mapping(address =&gt; uint256) public sigNonces;
+&nbsp;
+    /// @notice Ensures only the registrar can register modules
+<span class="fstat-no" title="function not covered" >    modifier onlyRegistrar() {</span>
+<span class="cstat-no" title="statement not covered" >        require(msg.sender == registrar, "ZMM::onlyRegistrar must be registrar")</span>;
+        _;
+    }
+&nbsp;
+    /// @notice Emitted when a user's module approval is updated
+    /// @param user The address of the user
+    /// @param module The address of the module
+    /// @param approved Whether the user added or removed approval
+    event ModuleApprovalSet(address indexed user, address indexed module, bool approved);
+&nbsp;
+    /// @notice Emitted when a module is registered
+    /// @param module The address of the module
+    event ModuleRegistered(address indexed module);
+&nbsp;
+    /// @notice Emitted when the registrar address is updated
+    /// @param newRegistrar The address of the new registrar
+    event RegistrarChanged(address indexed newRegistrar);
+&nbsp;
+    /// @param _registrar The initial registrar for the manager
+    /// @param _feeToken The module fee token contract to mint from upon module registration
+<span class="fstat-no" title="function not covered" >    constructor(address _registrar, address _feeToken) {</span>
+<span class="cstat-no" title="statement not covered" >        require(_registrar != address(0), "ZMM::must set registrar to non-zero address")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        registrar = _registrar</span>;
+<span class="cstat-no" title="statement not covered" >        moduleFeeToken = ZoraProtocolFeeSettings(_feeToken)</span>;
+    }
+&nbsp;
+    /// @notice Returns true if the user has approved a given module, false otherwise
+    /// @param _user The user to check approvals for
+    /// @param _module The module to check approvals for
+    /// @return True if the module has been approved by the user, false otherwise
+<span class="fstat-no" title="function not covered" >    function isModuleApproved(address _user, address _module) external view returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >        return userApprovals[_user][_module];</span>
+    }
+&nbsp;
+    /// @notice Allows a user to set the approval for a given module
+    /// @param _module The module to approve
+    /// @param _approved A boolean, whether or not to approve a module
+<span class="fstat-no" title="function not covered" >    function setApprovalForModule(address _module, bool _approved) public {</span>
+<span class="cstat-no" title="statement not covered" >        _setApprovalForModule(_module, msg.sender, _approved)</span>;
+    }
+&nbsp;
+ 
+    /// @notice Sets approvals for multiple modules at once
+    /// @param _modules The list of module addresses to set approvals for
+    /// @param _approved A boolean, whether or not to approve the modules
+<span class="fstat-no" title="function not covered" >    function setBatchApprovalForModules(address[] memory _modules, bool _approved) public {</span>
+        // Store the number of module addresses provided
+<span class="cstat-no" title="statement not covered" >        uint256 numModules = _modules.length;</span>
+&nbsp;
+        // Loop through each address
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; numModules; ) {</span>
+            // Ensure that it's a registered module and set the approval
+<span class="cstat-no" title="statement not covered" >            _setApprovalForModule(_modules[i], msg.sender, _approved)</span>;
+&nbsp;
+            // Cannot overflow as array length cannot exceed uint256 max
+            unchecked {
+                ++i;
+            }
+        }
+    }
+&nbsp;
+    /// @notice Sets approval for a module given an EIP-712 signature
+    /// @param _module The module to approve
+    /// @param _user The user to approve the module for
+    /// @param _approved A boolean, whether or not to approve a module
+    /// @param _deadline The deadline at which point the given signature expires
+    /// @param _v The 129th byte and chain ID of the signature
+    /// @param _r The first 64 bytes of the signature
+    /// @param _s Bytes 64-128 of the signature
+<span class="fstat-no" title="function not covered" >    function setApprovalForModuleBySig(</span>
+        address _module,
+        address _user,
+        bool _approved,
+        uint256 _deadline,
+        uint8 _v,
+        bytes32 _r,
+        bytes32 _s
+    ) public {
+<span class="cstat-no" title="statement not covered" >        require(_deadline == 0 || _deadline &gt;= block.timestamp, "ZMM::setApprovalForModuleBySig deadline expired")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        bytes32 digest = keccak256(</span>
+            abi.encodePacked(
+                "\x19\x01",
+                EIP_712_DOMAIN_SEPARATOR,
+                keccak256(abi.encode(SIGNED_APPROVAL_TYPEHASH, _module, _user, _approved, _deadline, sigNonces[_user]++))
+            )
+        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        address recoveredAddress = ecrecover(digest, _v, _r, _s);</span>
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        require(recoveredAddress != address(0) &amp;&amp; recoveredAddress == _user, "ZMM::setApprovalForModuleBySig invalid signature")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        _setApprovalForModule(_module, _user, _approved)</span>;
+    }
+&nbsp;
+ 
+    /// @notice Registers a module
+    /// @param _module The address of the module
+<span class="fstat-no" title="function not covered" >    function registerModule(address _module) public onlyRegistrar {</span>
+<span class="cstat-no" title="statement not covered" >        require(!moduleRegistered[_module], "ZMM::registerModule module already registered")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        moduleRegistered[_module] = true</span>;
+<span class="cstat-no" title="statement not covered" >        moduleFeeToken.mint(registrar, _module)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit ModuleRegistered(_module);</span>
+    }
+&nbsp;
+    /// @notice Sets the registrar for the ZORA Module Manager
+    /// @param _registrar the address of the new registrar
+<span class="fstat-no" title="function not covered" >    function setRegistrar(address _registrar) public onlyRegistrar {</span>
+<span class="cstat-no" title="statement not covered" >        require(_registrar != address(0), "ZMM::setRegistrar must set registrar to non-zero address")</span>;
+<span class="cstat-no" title="statement not covered" >        registrar = _registrar</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit RegistrarChanged(_registrar);</span>
+    }
+&nbsp;
+    /// @notice Updates a module approval for a user
+    /// @param _module The address of the module
+    /// @param _user The address of the user
+    /// @param _approved Whether the user is adding or removing approval
+<span class="fstat-no" title="function not covered" >    function _setApprovalForModule(</span>
+        address _module,
+        address _user,
+        bool _approved
+    ) private {
+<span class="cstat-no" title="statement not covered" >        require(moduleRegistered[_module], "ZMM::must be registered module")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        userApprovals[_user][_module] = _approved</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit ModuleApprovalSet(msg.sender, _module, _approved);</span>
+    }
+&nbsp;
+    /// @notice The EIP-155 chain id
+<span class="fstat-no" title="function not covered" >    function _chainID() private view returns (uint256 id) {</span>
+        assembly {
+            id := chainid()
+        }
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jul 18 2022 12:17:17 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../sorter.js"></script>
+</body>
+</html>

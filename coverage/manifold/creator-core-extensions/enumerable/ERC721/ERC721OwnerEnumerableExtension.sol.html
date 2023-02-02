@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for manifold/creator-core-extensions/enumerable/ERC721/ERC721OwnerEnumerableExtension.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">manifold/creator-core-extensions/enumerable/ERC721/</a> ERC721OwnerEnumerableExtension.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/20</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/8</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/22</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+&nbsp;
+pragma solidity ^0.8.0;
+&nbsp;
+/// @author: manifold.xyz
+&nbsp;
+import "../../../../openzeppelin/utils/introspection/ERC165.sol";
+import "../../../../openzeppelin/utils/structs/EnumerableSet.sol";
+&nbsp;
+import "../../../creator-core/core/IERC721CreatorCore.sol";
+import "../../../creator-core/extensions/ERC721/ERC721CreatorExtensionApproveTransfer.sol";
+&nbsp;
+/**
+ * Provide token enumeration functionality
+ *
+ * IMPORTANT: You must call _activate for each creator contract you want enumeration to work for
+ */
+abstract contract ERC721OwnerEnumerableExtension is
+    ERC721CreatorExtensionApproveTransfer
+{
+    mapping(address =&gt; mapping(address =&gt; uint256))
+        private _creatorOwnerBalance;
+    mapping(address =&gt; mapping(address =&gt; mapping(uint256 =&gt; uint256)))
+        private _creatorTokensByOwner;
+    mapping(address =&gt; mapping(uint256 =&gt; uint256)) private _creatorTokensIndex;
+&nbsp;
+    /**
+     * @dev must call this to activate enumeration capability
+     */
+<span class="fstat-no" title="function not covered" >    function _activate(address creator) internal {</span>
+<span class="cstat-no" title="statement not covered" >        IERC721CreatorCore(creator).setApproveTransferExtension(true)</span>;
+    }
+&nbsp;
+    /**
+     * @dev Get the token for an owner by index (for a given creator contract this extension mints to)
+     */
+<span class="fstat-no" title="function not covered" >    function tokenOfOwnerByIndex(</span>
+        address creator,
+        address owner,
+        uint256 index
+    ) public view virtual returns (uint256) {
+<span class="cstat-no" title="statement not covered" >        require(</span>
+            index &lt; _creatorOwnerBalance[creator][owner],
+            "ERC721Enumerable: owner index out of bounds"
+        );
+<span class="cstat-no" title="statement not covered" >        return _creatorTokensByOwner[creator][owner][index];</span>
+    }
+&nbsp;
+    /**
+     * @dev Get the balance for the owner for this extension (for a given creator contract this extension mints to)
+     */
+<span class="fstat-no" title="function not covered" >    function balanceOf(address creator, address owner)</span>
+        public
+        view
+        virtual
+        returns (uint256)
+    {
+<span class="cstat-no" title="statement not covered" >        return _creatorOwnerBalance[creator][owner];</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function approveTransfer(</span>
+        address from,
+        address to,
+        uint256 tokenId
+    ) external override returns (bool) {
+<span class="cstat-no" title="statement not covered" >        if (from != address(0) &amp;&amp; from != to) {</span>
+<span class="cstat-no" title="statement not covered" >            _removeTokenFromOwnerEnumeration(from, tokenId)</span>;
+        }
+<span class="cstat-no" title="statement not covered" >        if (to != address(0) &amp;&amp; to != from) {</span>
+<span class="cstat-no" title="statement not covered" >            _addTokenToOwnerEnumeration(to, tokenId)</span>;
+        }
+<span class="cstat-no" title="statement not covered" >        return true;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function _addTokenToOwnerEnumeration(address to, uint256 tokenId) private {</span>
+<span class="cstat-no" title="statement not covered" >        uint256 length = _creatorOwnerBalance[msg.sender][to];</span>
+<span class="cstat-no" title="statement not covered" >        _creatorTokensByOwner[msg.sender][to][length] = tokenId</span>;
+<span class="cstat-no" title="statement not covered" >        _creatorTokensIndex[msg.sender][tokenId] = length</span>;
+<span class="cstat-no" title="statement not covered" >        _creatorOwnerBalance[msg.sender][to] += 1</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function _removeTokenFromOwnerEnumeration(address from, uint256 tokenId)</span>
+        private
+    {
+        // To prevent a gap in from's tokens array, we store the last token in the index of the token to delete, and
+        // then delete the last slot (swap and pop).
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        uint256 lastTokenIndex = _creatorOwnerBalance[msg.sender][from] - 1;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 tokenIndex = _creatorTokensIndex[msg.sender][tokenId];</span>
+&nbsp;
+        // When the token to delete is the last token, the swap operation is unnecessary
+<span class="cstat-no" title="statement not covered" >        if (tokenIndex != lastTokenIndex) {</span>
+<span class="cstat-no" title="statement not covered" >            uint256 lastTokenId = _creatorTokensByOwner[msg.sender][from][</span>
+                lastTokenIndex
+            ];
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            _creatorTokensByOwner[msg.sender][from][tokenIndex] = lastTokenId</span>; // Move the last token to the slot of the to-delete token
+<span class="cstat-no" title="statement not covered" >            _creatorTokensIndex[msg.sender][lastTokenId] = tokenIndex</span>; // Update the moved token's index
+        }
+&nbsp;
+        // This also deletes the contents at the last position of the array
+        delete _creatorTokensIndex[msg.sender][tokenId];
+        delete _creatorTokensByOwner[msg.sender][from][lastTokenIndex];
+<span class="cstat-no" title="statement not covered" >        _creatorOwnerBalance[msg.sender][from] -= 1</span>;
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jul 18 2022 12:17:17 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32",
+						"name": "_root",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "answer",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes32[]",
+						"name": "proof",
+						"type": "bytes32[]"
+					},
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "isApproved",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "leaf",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bool",
+						"name": "approval",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "root",
+				"outputs": [
+					{
+						"internalType": "bytes32",
+						"name": "",
+						"type": "bytes32"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/mojito/sothebys/verify.sol": "verify"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 25
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/mojito/sothebys/verify.sol": {
+			"keccak256": "0x42c41cb523b71dc10fb2dc07eb446e4a7d6bb13e5906fea78913c386c6ec57e9",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://5a14449506562fb11accecb638dff99c7acf395d7c26eac17acad95e5f04ea9e",
+				"dweb:/ipfs/QmZSxMRh7tUtg3U38bQc36b4QyrEZecLntarFNEwNH8U6w"
+			]
+		},
+		"contracts/openzeppelin/utils/cryptography/MerkleProof.sol": {
+			"keccak256": "0x972240f593e01b2fae2e90c5b94260f4971f03076363a38a3f4fff105efbba8b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b30e18f10f56b137384de1430e8dfea0756dc9ec226e9c1aba1cc2e6fccd11ec",
+				"dweb:/ipfs/QmWiRwro1rdrnRWZVdXcofSV1YhaopMF53pnZyU4FYCmGn"
+			]
+		}
+	},
+	"version": 1
+}

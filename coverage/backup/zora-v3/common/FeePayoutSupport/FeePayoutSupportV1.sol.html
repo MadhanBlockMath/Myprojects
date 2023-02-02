@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for backup/zora-v3/common/FeePayoutSupport/FeePayoutSupportV1.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../../../prettify.css" />
+    <link rel="stylesheet" href="../../../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../../../index.html">all files</a> / <a href="index.html">backup/zora-v3/common/FeePayoutSupport/</a> FeePayoutSupportV1.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/32</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/12</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/5</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/32</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.0;
+&nbsp;
+import {IRoyaltyEngineV1} from "../../../../manifold/royalty-registry/IRoyaltyEngineV1.sol";
+import {IERC20} from "../../../../openzeppelin/token/ERC20/IERC20.sol";
+import {ERC165Checker} from "../../../../openzeppelin/utils/introspection/ERC165Checker.sol";
+import {ZoraProtocolFeeSettings} from "../../auxiliary/ZoraProtocolFeeSettings/ZoraProtocolFeeSettings.sol";
+import {OutgoingTransferSupportV1} from "../OutgoingTransferSupport/V1/OutgoingTransferSupportV1.sol";
+&nbsp;
+/// @title FeePayoutSupportV1
+/// @author tbtstl &lt;t@zora.co&gt;
+/// @notice This contract extension supports paying out protocol fees and royalties
+contract FeePayoutSupportV1 is OutgoingTransferSupportV1 {
+    /// @notice The ZORA Module Registrar
+    address public immutable registrar;
+&nbsp;
+    ZoraProtocolFeeSettings immutable protocolFeeSettings;
+&nbsp;
+    IRoyaltyEngineV1 royaltyEngine;
+&nbsp;
+    /// @notice Emitted when royalties are paid
+    /// @param tokenContract The ERC-721 token address of the royalty payout
+    /// @param tokenId The ERC-721 token ID of the royalty payout
+    /// @param recipient The recipient address of the royalty
+    /// @param amount The amount paid to the recipient
+    event RoyaltyPayout(address indexed tokenContract, uint256 indexed tokenId, address recipient, uint256 amount);
+&nbsp;
+    /// @param _royaltyEngine The Manifold Royalty Engine V1 address
+    /// @param _protocolFeeSettings The ZoraProtocolFeeSettingsV1 address
+    /// @param _wethAddress WETH address
+    /// @param _registrarAddress The Registrar address, who can update the royalty engine address
+<span class="fstat-no" title="function not covered" >    constructor(</span>
+        address _royaltyEngine,
+        address _protocolFeeSettings,
+        address _wethAddress,
+        address _registrarAddress
+    ) OutgoingTransferSupportV1(_wethAddress) {
+<span class="cstat-no" title="statement not covered" >        royaltyEngine = IRoyaltyEngineV1(_royaltyEngine)</span>;
+<span class="cstat-no" title="statement not covered" >        protocolFeeSettings = ZoraProtocolFeeSettings(_protocolFeeSettings)</span>;
+<span class="cstat-no" title="statement not covered" >        registrar = _registrarAddress</span>;
+    }
+&nbsp;
+    /// @notice Update the address of the Royalty Engine, in case of unexpected update on Manifold's Proxy
+    /// @dev emergency use only – requires a frozen RoyaltyEngineV1 at commit 4ae77a73a8a73a79d628352d206fadae7f8e0f74
+    ///  to be deployed elsewhere, or a contract matching that ABI
+    /// @param _royaltyEngine The address for the new royalty engine
+<span class="fstat-no" title="function not covered" >    function setRoyaltyEngineAddress(address _royaltyEngine) public {</span>
+<span class="cstat-no" title="statement not covered" >        require(msg.sender == registrar, "setRoyaltyEngineAddress only registrar")</span>;
+<span class="cstat-no" title="statement not covered" >        require(</span>
+            ERC165Checker.supportsInterface(_royaltyEngine, type(IRoyaltyEngineV1).interfaceId),
+            "setRoyaltyEngineAddress must match IRoyaltyEngineV1 interface"
+        );
+<span class="cstat-no" title="statement not covered" >        royaltyEngine = IRoyaltyEngineV1(_royaltyEngine)</span>;
+    }
+&nbsp;
+    /// @notice Pays out the protocol fee to its fee recipient
+    /// @param _amount The sale amount
+    /// @param _payoutCurrency The currency to pay the fee
+    /// @return The remaining funds after paying the protocol fee
+<span class="fstat-no" title="function not covered" >    function _handleProtocolFeePayout(uint256 _amount, address _payoutCurrency) internal returns (uint256) {</span>
+        // Get fee for this module
+<span class="cstat-no" title="statement not covered" >        uint256 protocolFee = protocolFeeSettings.getFeeAmount(address(this), _amount);</span>
+&nbsp;
+        // If no fee, return initial amount
+<span class="cstat-no" title="statement not covered" >        if (protocolFee == 0) <span class="cstat-no" title="statement not covered" >return _amount;</span></span>
+&nbsp;
+        // Get fee recipient
+<span class="cstat-no" title="statement not covered" >        (, address feeRecipient) = protocolFeeSettings.moduleFeeSetting(address(this));</span>
+&nbsp;
+        // Payout protocol fee
+<span class="cstat-no" title="statement not covered" >        _handleOutgoingTransfer(feeRecipient, protocolFee, _payoutCurrency, 50000)</span>;
+&nbsp;
+        // Return remaining amount
+<span class="cstat-no" title="statement not covered" >        return _amount - protocolFee;</span>
+    }
+&nbsp;
+    /// @notice Pays out royalties for given NFTs
+    /// @param _tokenContract The NFT contract address to get royalty information from
+    /// @param _tokenId, The Token ID to get royalty information from
+    /// @param _amount The total sale amount
+    /// @param _payoutCurrency The ERC-20 token address to payout royalties in, or address(0) for ETH
+    /// @param _gasLimit The gas limit to use when attempting to payout royalties. Uses gasleft() if not provided.
+    /// @return The remaining funds after paying out royalties
+<span class="fstat-no" title="function not covered" >    function _handleRoyaltyPayout(</span>
+        address _tokenContract,
+        uint256 _tokenId,
+        uint256 _amount,
+        address _payoutCurrency,
+        uint256 _gasLimit
+    ) internal returns (uint256, bool) {
+        // If no gas limit was provided or provided gas limit greater than gas left, just pass the remaining gas.
+<span class="cstat-no" title="statement not covered" >        uint256 gas = (_gasLimit == 0 || _gasLimit &gt; gasleft()) ? gasleft() : _gasLimit;</span>
+&nbsp;
+        // External call ensuring contract doesn't run out of gas paying royalties
+<span class="cstat-no" title="statement not covered" >        try this._handleRoyaltyEnginePayout{gas: gas}(_tokenContract, _tokenId, _amount, _payoutCurrency) returns (uint256 remainingFunds) {</span>
+            // Return remaining amount if royalties payout succeeded
+<span class="cstat-no" title="statement not covered" >            return (remainingFunds, true);</span>
+        } catch {
+            // Return initial amount if royalties payout failed
+<span class="cstat-no" title="statement not covered" >            return (_amount, false);</span>
+        }
+    }
+&nbsp;
+    /// @notice Pays out royalties for NFTs based on the information returned by the royalty engine
+    /// @dev This method is external to enable setting a gas limit when called - see `_handleRoyaltyPayout`.
+    /// @param _tokenContract The NFT Contract to get royalty information from
+    /// @param _tokenId, The Token ID to get royalty information from
+    /// @param _amount The total sale amount
+    /// @param _payoutCurrency The ERC-20 token address to payout royalties in, or address(0) for ETH
+    /// @return The remaining funds after paying out royalties
+<span class="fstat-no" title="function not covered" >    function _handleRoyaltyEnginePayout(</span>
+        address _tokenContract,
+        uint256 _tokenId,
+        uint256 _amount,
+        address _payoutCurrency
+    ) external payable returns (uint256) {
+        // Ensure the caller is the contract
+<span class="cstat-no" title="statement not covered" >        require(msg.sender == address(this), "_handleRoyaltyEnginePayout only self callable")</span>;
+&nbsp;
+        // Get the royalty recipients and their associated amounts
+<span class="cstat-no" title="statement not covered" >        (address payable[] memory recipients, uint256[] memory amounts) = royaltyEngine.getRoyalty(_tokenContract, _tokenId, _amount);</span>
+&nbsp;
+        // Store the number of recipients
+<span class="cstat-no" title="statement not covered" >        uint256 numRecipients = recipients.length;</span>
+&nbsp;
+        // If there are no royalties, return the initial amount
+<span class="cstat-no" title="statement not covered" >        if (numRecipients == 0) <span class="cstat-no" title="statement not covered" >return _amount;</span></span>
+&nbsp;
+        // Store the initial amount
+<span class="cstat-no" title="statement not covered" >        uint256 amountRemaining = _amount;</span>
+&nbsp;
+        // Store the variables that cache each recipient and amount
+<span class="cstat-no" title="statement not covered" >        address recipient;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 amount;</span>
+&nbsp;
+        // Payout each royalty
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; numRecipients; ) {</span>
+            // Cache the recipient and amount
+<span class="cstat-no" title="statement not covered" >            recipient = recipients[i]</span>;
+<span class="cstat-no" title="statement not covered" >            amount = amounts[i]</span>;
+&nbsp;
+            // Ensure that we aren't somehow paying out more than we have
+<span class="cstat-no" title="statement not covered" >            require(amountRemaining &gt;= amount, "insolvent")</span>;
+&nbsp;
+            // Transfer to the recipient
+<span class="cstat-no" title="statement not covered" >            _handleOutgoingTransfer(recipient, amount, _payoutCurrency, 50000)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >            emit RoyaltyPayout(_tokenContract, _tokenId, recipient, amount);</span>
+&nbsp;
+            // Cannot underflow as remaining amount is ensured to be greater than or equal to royalty amount
+            unchecked {
+<span class="cstat-no" title="statement not covered" >                amountRemaining -= amount</span>;
+                ++i;
+            }
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return amountRemaining;</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jul 18 2022 12:17:17 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="../../../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../../../sorter.js"></script>
+</body>
+</html>

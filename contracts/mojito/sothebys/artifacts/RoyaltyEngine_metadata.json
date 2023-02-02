@@ -1,0 +1,110 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getRoyalty",
+				"outputs": [
+					{
+						"internalType": "address payable[]",
+						"name": "recipients",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "bps",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"getRoyalty(address,uint256)": {
+					"params": {
+						"tokenContract": "The NFT Contract address",
+						"tokenId": "The NFT tokenId"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getRoyalty(address,uint256)": {
+					"notice": "Get the Royalty Fee details for the tokenID"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/mojito/sothebys/RoyaltyEngine.sol": "RoyaltyEngine"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 125
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/manifold/creator-core/core/ICreatorCore.sol": {
+			"keccak256": "0x61a300259ca1484e05b04ece0acc97b9dbf5fbdd7b3d20a6892d8a1d3052362f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://59981fee263486519a6e698f4f8ad5ee8af7c0668aee8bf335d285a06c3b02bb",
+				"dweb:/ipfs/QmabGX8ERpimg3K8w5uSbVqdLXMo6fgizMmVyPPXazmJco"
+			]
+		},
+		"contracts/mojito/interfaces/IRoyaltyEngine.sol": {
+			"keccak256": "0x10b0c4526004a6c3572bbc4f60c4256bd99f64ec01deb8e6b9b22e5ae6e034b7",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b4dcd64bf92c6c9823469e0001f40cec8e48de2f8b0346218e4af27b04e039c7",
+				"dweb:/ipfs/QmPUDiEYvesRGwK8Kv8uVJEnVd6P8itJCkUr9PKCPGTCq4"
+			]
+		},
+		"contracts/mojito/sothebys/RoyaltyEngine.sol": {
+			"keccak256": "0x6dc56a9a4f45e1e6368cdfbf1ae7b2efc2d30c3d68978f6cd1e0ee3c2a3315e2",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://f3152ad063cb9e8722ee8f42daf84940dad0d6fd839d3f4c43696baf48ad863a",
+				"dweb:/ipfs/QmeMEMU48vnHpNN4SHusw7zjq55H1H933qPM2DmWB2S3iH"
+			]
+		},
+		"contracts/openzeppelin/utils/introspection/IERC165.sol": {
+			"keccak256": "0x6aa521718bf139b44ce56f194f6aea1d590cacef995b5a84703fb1579fa49be9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://100f8d367b5e94eb9cb991914f1de133cf272654c0708faa893bbc17a5b35b93",
+				"dweb:/ipfs/QmZeBojmgXq821dL1TJKFb58B1FogM9jL3u7hXQ8hTEBKT"
+			]
+		}
+	},
+	"version": 1
+}

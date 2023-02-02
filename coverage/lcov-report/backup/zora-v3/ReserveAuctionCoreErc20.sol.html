@@ -1,0 +1,1109 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for backup/zora-v3/ReserveAuctionCoreErc20.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../../index.html">all files</a> / <a href="index.html">backup/zora-v3/</a> ReserveAuctionCoreErc20.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/64</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/38</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/69</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196
+197
+198
+199
+200
+201
+202
+203
+204
+205
+206
+207
+208
+209
+210
+211
+212
+213
+214
+215
+216
+217
+218
+219
+220
+221
+222
+223
+224
+225
+226
+227
+228
+229
+230
+231
+232
+233
+234
+235
+236
+237
+238
+239
+240
+241
+242
+243
+244
+245
+246
+247
+248
+249
+250
+251
+252
+253
+254
+255
+256
+257
+258
+259
+260
+261
+262
+263
+264
+265
+266
+267
+268
+269
+270
+271
+272
+273
+274
+275
+276
+277
+278
+279
+280
+281
+282
+283
+284
+285
+286
+287
+288
+289
+290
+291
+292
+293
+294
+295
+296
+297
+298
+299
+300
+301
+302
+303
+304
+305
+306
+307
+308
+309
+310
+311
+312
+313
+314
+315
+316
+317
+318
+319
+320
+321
+322
+323
+324
+325
+326
+327
+328
+329
+330
+331
+332
+333
+334
+335
+336
+337
+338
+339
+340
+341
+342
+343
+344
+345
+346
+347
+348
+349</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.0;
+&nbsp;
+import {ReentrancyGuard} from "./interfaces/ReentrancyGuard.sol";
+import {IERC721} from "../../openzeppelin/token/ERC721/IERC721.sol";
+&nbsp;
+import {ERC721TransferHelper} from "./transferHelpers/ERC721TransferHelper.sol";
+import {IncomingTransferSupportV1} from "./common/IncomingTransferSupport/V1/IncomingTransferSupportV1.sol";
+import {FeePayoutSupportV1} from "./common/FeePayoutSupport/FeePayoutSupportV1.sol";
+import {ModuleNamingSupportV1} from "./common/ModuleNamingSupport/ModuleNamingSupportV1.sol";
+import {IReserveAuctionCoreErc20} from "./interfaces/IReserveAuctionCoreErc20.sol";
+&nbsp;
+/// @title Reserve Auction Core ERC-20
+/// @author kulkarohan
+/// @notice Module for minimal ERC-20 timed reserve auctions for ERC-721 tokens
+contract ReserveAuctionCoreErc20 is IReserveAuctionCoreErc20, ReentrancyGuard, IncomingTransferSupportV1, FeePayoutSupportV1, ModuleNamingSupportV1 {
+&nbsp;
+    uint16 constant TIME_BUFFER = 15 minutes;
+&nbsp;
+    uint8 constant MIN_BID_INCREMENT_PERCENTAGE = 10;
+&nbsp;
+    /// @notice The ZORA ERC-721 Transfer Helper
+    ERC721TransferHelper public immutable erc721TransferHelper;
+&nbsp;
+    /// @notice The auction for a given NFT, if one exists
+    /// @dev ERC-721 token contract =&gt; ERC-721 token id =&gt; Auction
+    mapping(address =&gt; mapping(uint256 =&gt; Auction)) public auctionForNFT;
+&nbsp;
+    /// @notice The metadata for a given auction
+    /// @param seller The address of the seller
+    /// @param reservePrice The reserve price to start the auction
+    /// @param sellerFundsRecipient The address where funds are sent after the auction
+    /// @param highestBid The highest bid of the auction
+    /// @param highestBidder The address of the highest bidder
+    /// @param duration The length of time that the auction runs after the first bid is placed
+    /// @param startTime The time that the first bid can be placed
+    /// @param currency The address of the ERC-20 token, or address(0) for ETH, required to place a bid
+    /// @param firstBidTime The time that the first bid is placed
+    struct Auction {
+        address seller;
+        uint96 reservePrice;
+        address sellerFundsRecipient;
+        uint96 highestBid;
+        address highestBidder;
+        uint48 duration;
+        uint48 startTime;
+        address currency;
+        uint96 firstBidTime;
+    }
+&nbsp;
+    /// @notice Emitted when an auction is created
+    /// @param tokenContract The ERC-721 token address of the created auction
+    /// @param tokenId The ERC-721 token id of the created auction
+    /// @param auction The metadata of the created auction
+    event AuctionCreated(address indexed tokenContract, uint256 indexed tokenId, Auction auction);
+&nbsp;
+    /// @notice Emitted when a reserve price is updated
+    /// @param tokenContract The ERC-721 token address of the updated auction
+    /// @param tokenId The ERC-721 token id of the updated auction
+    /// @param auction The metadata of the updated auction
+    event AuctionReservePriceUpdated(address indexed tokenContract, uint256 indexed tokenId, Auction auction);
+&nbsp;
+    /// @notice Emitted when an auction is canceled
+    /// @param tokenContract The ERC-721 token address of the canceled auction
+    /// @param tokenId The ERC-721 token id of the canceled auction
+    /// @param auction The metadata of the canceled auction
+    event AuctionCanceled(address indexed tokenContract, uint256 indexed tokenId, Auction auction);
+&nbsp;
+    /// @notice Emitted when a bid is placed
+    /// @param tokenContract The ERC-721 token address of the auction
+    /// @param tokenId The ERC-721 token id of the auction
+    /// @param firstBid If the bid started the auction
+    /// @param extended If the bid extended the auction
+    /// @param auction The metadata of the auction
+    event AuctionBid(address indexed tokenContract, uint256 indexed tokenId, bool firstBid, bool extended, Auction auction);
+&nbsp;
+    /// @notice Emitted when an auction has ended
+    /// @param tokenContract The ERC-721 token address of the auction
+    /// @param tokenId The ERC-721 token id of the auction
+    /// @param auction The metadata of the settled auction
+    event AuctionEnded(address indexed tokenContract, uint256 indexed tokenId, Auction auction);
+&nbsp;
+    /// @param _erc20TransferHelper The ZORA ERC-20 Transfer Helper address
+    /// @param _erc721TransferHelper The ZORA ERC-721 Transfer Helper address
+    /// @param _royaltyEngine The Manifold Royalty Engine address
+    /// @param _protocolFeeSettings The ZORA Protocol Fee Settings address
+    /// @param _weth The WETH token address
+<span class="fstat-no" title="function not covered" >    constructor(</span>
+        address _erc20TransferHelper,
+        address _erc721TransferHelper,
+        address _royaltyEngine,
+        address _protocolFeeSettings,
+        address _weth
+    )
+        IncomingTransferSupportV1(_erc20TransferHelper)
+        FeePayoutSupportV1(_royaltyEngine, _protocolFeeSettings, _weth, ERC721TransferHelper(_erc721TransferHelper).ZMM().registrar())
+        ModuleNamingSupportV1("Reserve Auction Core ERC-20")
+    {
+<span class="cstat-no" title="statement not covered" >        erc721TransferHelper = ERC721TransferHelper(_erc721TransferHelper)</span>;
+    }
+&nbsp;
+    /// @notice Implements EIP-165 for standard interface detection
+    /// @dev `0x01ffc9a7` is the IERC165 interface id
+    /// @param _interfaceId The identifier of a given interface
+    /// @return If the given interface is supported
+<span class="fstat-no" title="function not covered" >    function supportsInterface(bytes4 _interfaceId) external pure returns (bool) {</span>
+<span class="cstat-no" title="statement not covered" >        return _interfaceId == type(IReserveAuctionCoreErc20).interfaceId || _interfaceId == 0x01ffc9a7;</span>
+    }
+&nbsp;
+&nbsp;
+    /// @notice Creates an auction for a given NFT
+    /// @param _tokenContract The address of the ERC-721 token
+    /// @param _tokenId The id of the ERC-721 token
+    /// @param _duration The length of time the auction should run after the first bid
+    /// @param _reservePrice The minimum bid amount to start the auction
+    /// @param _sellerFundsRecipient The address to send funds to once the auction is complete
+    /// @param _startTime The time that users can begin placing bids
+    /// @param _bidCurrency The address of the ERC-20 token, or address(0) for ETH, that users must bid with
+<span class="fstat-no" title="function not covered" >    function createAuction(</span>
+        address _tokenContract,
+        uint256 _tokenId,
+        uint256 _duration,
+        uint256 _reservePrice,
+        address _sellerFundsRecipient,
+        uint256 _startTime,
+        address _bidCurrency
+    ) external override nonReentrant {
+        // Get the owner of the specified token
+<span class="cstat-no" title="statement not covered" >        address tokenOwner = IERC721(_tokenContract).ownerOf(_tokenId);</span>
+&nbsp;
+        // Ensure the caller is the owner or an approved operator
+<span class="cstat-no" title="statement not covered" >        require(msg.sender == tokenOwner || IERC721(_tokenContract).isApprovedForAll(tokenOwner, msg.sender), "ONLY_TOKEN_OWNER_OR_OPERATOR")</span>;
+&nbsp;
+        // Ensure the reserve price can be downcasted to 96 bits for this module
+        // For a higher reserve price, use the supporting module
+<span class="cstat-no" title="statement not covered" >        require(_reservePrice &lt;= type(uint96).max, "INVALID_RESERVE_PRICE")</span>;
+&nbsp;
+        // Ensure the funds recipient is specified
+<span class="cstat-no" title="statement not covered" >        require(_sellerFundsRecipient != address(0), "INVALID_FUNDS_RECIPIENT")</span>;
+&nbsp;
+        // Store the auction metadata
+<span class="cstat-no" title="statement not covered" >        auctionForNFT[_tokenContract][_tokenId].seller = tokenOwner</span>;
+<span class="cstat-no" title="statement not covered" >        auctionForNFT[_tokenContract][_tokenId].reservePrice = uint96(_reservePrice)</span>;
+<span class="cstat-no" title="statement not covered" >        auctionForNFT[_tokenContract][_tokenId].sellerFundsRecipient = _sellerFundsRecipient</span>;
+<span class="cstat-no" title="statement not covered" >        auctionForNFT[_tokenContract][_tokenId].duration = uint48(_duration)</span>;
+<span class="cstat-no" title="statement not covered" >        auctionForNFT[_tokenContract][_tokenId].startTime = uint48(_startTime)</span>;
+<span class="cstat-no" title="statement not covered" >        auctionForNFT[_tokenContract][_tokenId].currency = _bidCurrency</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit AuctionCreated(_tokenContract, _tokenId, auctionForNFT[_tokenContract][_tokenId]);</span>
+    }
+&nbsp;
+ 
+    /// @notice Updates the reserve price for a given auction
+    /// @param _tokenContract The address of the ERC-721 token
+    /// @param _tokenId The id of the ERC-721 token
+    /// @param _reservePrice The new reserve price
+<span class="fstat-no" title="function not covered" >    function setAuctionReservePrice(</span>
+        address _tokenContract,
+        uint256 _tokenId,
+        uint256 _reservePrice
+    ) external override nonReentrant {
+        // Get the auction for the specified token
+<span class="cstat-no" title="statement not covered" >        Auction storage auction = auctionForNFT[_tokenContract][_tokenId];</span>
+&nbsp;
+        // Ensure the auction has not started
+<span class="cstat-no" title="statement not covered" >        require(auction.firstBidTime == 0, "AUCTION_STARTED")</span>;
+&nbsp;
+        // Ensure the caller is the seller
+<span class="cstat-no" title="statement not covered" >        require(msg.sender == auction.seller, "ONLY_SELLER")</span>;
+&nbsp;
+        // Ensure the reserve price can be downcasted to 96 bits
+<span class="cstat-no" title="statement not covered" >        require(_reservePrice &lt;= type(uint96).max, "INVALID_RESERVE_PRICE")</span>;
+&nbsp;
+        // Update the reserve price
+<span class="cstat-no" title="statement not covered" >        auction.reservePrice = uint96(_reservePrice)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit AuctionReservePriceUpdated(_tokenContract, _tokenId, auction);</span>
+    }
+&nbsp;
+&nbsp;
+    /// @notice Cancels the auction for a given NFT
+    /// @param _tokenContract The address of the ERC-721 token
+    /// @param _tokenId The id of the ERC-721 token
+<span class="fstat-no" title="function not covered" >    function cancelAuction(address _tokenContract, uint256 _tokenId) external override nonReentrant {</span>
+        // Get the auction for the specified token
+<span class="cstat-no" title="statement not covered" >        Auction memory auction = auctionForNFT[_tokenContract][_tokenId];</span>
+&nbsp;
+        // Ensure the auction has not started
+<span class="cstat-no" title="statement not covered" >        require(auction.firstBidTime == 0, "AUCTION_STARTED")</span>;
+&nbsp;
+        // Ensure the caller is the seller or a new owner of the token
+<span class="cstat-no" title="statement not covered" >        require(msg.sender == auction.seller || msg.sender == IERC721(_tokenContract).ownerOf(_tokenId), "ONLY_SELLER_OR_TOKEN_OWNER")</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit AuctionCanceled(_tokenContract, _tokenId, auction);</span>
+&nbsp;
+        // Remove the auction from storage
+        delete auctionForNFT[_tokenContract][_tokenId];
+    }
+&nbsp;
+    /// @notice Places a bid on the auction for a given NFT
+    /// @param _tokenContract The address of the ERC-721 token
+    /// @param _tokenId The id of the ERC-721 token
+    /// @param _amount The amount to bid
+<span class="fstat-no" title="function not covered" >    function createBid(</span>
+        address _tokenContract,
+        uint256 _tokenId,
+        uint256 _amount
+    ) external  override payable nonReentrant {
+        // Get the auction for the specified token
+<span class="cstat-no" title="statement not covered" >        Auction storage auction = auctionForNFT[_tokenContract][_tokenId];</span>
+&nbsp;
+        // Cache the seller
+<span class="cstat-no" title="statement not covered" >        address seller = auction.seller;</span>
+&nbsp;
+        // Ensure the auction exists
+<span class="cstat-no" title="statement not covered" >        require(seller != address(0), "AUCTION_DOES_NOT_EXIST")</span>;
+&nbsp;
+        // Ensure the auction has started or is valid to start
+<span class="cstat-no" title="statement not covered" >        require(block.timestamp &gt;= auction.startTime, "AUCTION_NOT_STARTED")</span>;
+&nbsp;
+        // Ensure the bid can be downcasted to 96 bits for this module
+        // For a higher bid, use the supporting module
+<span class="cstat-no" title="statement not covered" >        require(_amount &lt;= type(uint96).max, "INVALID_BID")</span>;
+&nbsp;
+        // Cache more auction metadata
+<span class="cstat-no" title="statement not covered" >        uint256 firstBidTime = auction.firstBidTime;</span>
+<span class="cstat-no" title="statement not covered" >        uint256 duration = auction.duration;</span>
+<span class="cstat-no" title="statement not covered" >        address currency = auction.currency;</span>
+&nbsp;
+        // Used to emit whether the bid started the auction
+<span class="cstat-no" title="statement not covered" >        bool firstBid;</span>
+&nbsp;
+        // If this is the first bid, start the auction
+<span class="cstat-no" title="statement not covered" >        if (firstBidTime == 0) {</span>
+            // Ensure the bid meets the reserve price
+<span class="cstat-no" title="statement not covered" >            require(_amount &gt;= auction.reservePrice, "RESERVE_PRICE_NOT_MET")</span>;
+&nbsp;
+            // Store the current time as the first bid time
+<span class="cstat-no" title="statement not covered" >            auction.firstBidTime = uint96(block.timestamp)</span>;
+&nbsp;
+            // Mark this bid as the first
+<span class="cstat-no" title="statement not covered" >            firstBid = true</span>;
+&nbsp;
+            // Transfer the NFT from the seller into escrow for the duration of the auction
+            // Reverts if the seller did not approve the ERC721TransferHelper or no longer owns the token
+<span class="cstat-no" title="statement not covered" >            erc721TransferHelper.transferFrom(_tokenContract, seller, address(this), _tokenId)</span>;
+&nbsp;
+            // Else this is a subsequent bid, so refund the previous bidder
+        } else {
+            // Ensure the auction has not ended
+<span class="cstat-no" title="statement not covered" >            require(block.timestamp &lt; firstBidTime + duration, "AUCTION_OVER")</span>;
+&nbsp;
+            // Cache the highest bid
+<span class="cstat-no" title="statement not covered" >            uint256 highestBid = auction.highestBid;</span>
+&nbsp;
+            // Used to store the minimum bid required to outbid the highest bidder
+<span class="cstat-no" title="statement not covered" >            uint256 minValidBid;</span>
+&nbsp;
+            // Calculate the minimum bid required (10% higher than the highest bid)
+            // Cannot overflow as `minValidBid` cannot be greater than 104 bits
+            unchecked {
+<span class="cstat-no" title="statement not covered" >                minValidBid = highestBid + ((highestBid * MIN_BID_INCREMENT_PERCENTAGE) / 100)</span>;
+            }
+&nbsp;
+            // Ensure the result can be downcasted to 96 bits
+<span class="cstat-no" title="statement not covered" >            require(minValidBid &lt;= type(uint96).max, "MAX_BID_PLACED")</span>;
+&nbsp;
+            // Ensure the incoming bid meets the minimum
+<span class="cstat-no" title="statement not covered" >            require(_amount &gt;= minValidBid, "MINIMUM_BID_NOT_MET")</span>;
+&nbsp;
+            // Refund the previous bidder
+<span class="cstat-no" title="statement not covered" >            _handleOutgoingTransfer(auction.highestBidder, highestBid, currency, 50000)</span>;
+        }
+&nbsp;
+        // Retrieve the bid from the bidder
+        // If ETH, this reverts if the bidder did not attach enough
+        // If ERC-20, this reverts if the bidder did not approve the ERC20TransferHelper or does not own the specified amount
+<span class="cstat-no" title="statement not covered" >        _handleIncomingTransfer(_amount, currency)</span>;
+&nbsp;
+        // Store the amount as the highest bid
+<span class="cstat-no" title="statement not covered" >        auction.highestBid = uint96(_amount)</span>;
+&nbsp;
+        // Store the caller as the highest bidder
+<span class="cstat-no" title="statement not covered" >        auction.highestBidder = msg.sender</span>;
+&nbsp;
+        // Used to emit whether the bid extended the auction
+<span class="cstat-no" title="statement not covered" >        bool extended;</span>
+&nbsp;
+        // Used to store the auction time remaining
+<span class="cstat-no" title="statement not covered" >        uint256 timeRemaining;</span>
+&nbsp;
+        // Get the auction time remaining
+        // Cannot underflow as `firstBidTime + duration` is ensured to be greater than `block.timestamp`
+        unchecked {
+<span class="cstat-no" title="statement not covered" >            timeRemaining = firstBidTime + duration - block.timestamp</span>;
+        }
+&nbsp;
+        // If the bid is placed within 15 minutes of the auction end, extend the auction
+<span class="cstat-no" title="statement not covered" >        if (timeRemaining &lt; TIME_BUFFER) {</span>
+            // Add (15 minutes - remaining time) to the duration so that 15 minutes remain
+            // Cannot underflow as `timeRemaining` is ensured to be less than `TIME_BUFFER`
+            unchecked {
+<span class="cstat-no" title="statement not covered" >                auction.duration += uint48(TIME_BUFFER - timeRemaining)</span>;
+            }
+&nbsp;
+            // Mark the bid as one that extended the auction
+<span class="cstat-no" title="statement not covered" >            extended = true</span>;
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit AuctionBid(_tokenContract, _tokenId, firstBid, extended, auction);</span>
+    }
+&nbsp;
+    /// @notice Ends the auction for a given NFT
+    /// @param _tokenContract The address of the ERC-721 token
+    /// @param _tokenId The id of the ERC-721 token
+<span class="fstat-no" title="function not covered" >    function settleAuction(address _tokenContract, uint256 _tokenId) external override nonReentrant {</span>
+        // Get the auction for the specified token
+<span class="cstat-no" title="statement not covered" >        Auction memory auction = auctionForNFT[_tokenContract][_tokenId];</span>
+&nbsp;
+        // Cache the time of the first bid
+<span class="cstat-no" title="statement not covered" >        uint256 firstBidTime = auction.firstBidTime;</span>
+&nbsp;
+        // Ensure the auction had started
+<span class="cstat-no" title="statement not covered" >        require(firstBidTime != 0, "AUCTION_NOT_STARTED")</span>;
+&nbsp;
+        // Ensure the auction has ended
+<span class="cstat-no" title="statement not covered" >        require(block.timestamp &gt;= (firstBidTime + auction.duration), "AUCTION_NOT_OVER")</span>;
+&nbsp;
+        // Cache the auction currency
+<span class="cstat-no" title="statement not covered" >        address currency = auction.currency;</span>
+&nbsp;
+        // Payout associated token royalties, if any
+<span class="cstat-no" title="statement not covered" >        (uint256 remainingProfit, ) = _handleRoyaltyPayout(_tokenContract, _tokenId, auction.highestBid, currency, 300000);</span>
+&nbsp;
+        // Payout the module fee, if configured by the owner
+<span class="cstat-no" title="statement not covered" >        remainingProfit = _handleProtocolFeePayout(remainingProfit, currency)</span>;
+&nbsp;
+        // Transfer the remaining profit to the funds recipient
+<span class="cstat-no" title="statement not covered" >        _handleOutgoingTransfer(auction.sellerFundsRecipient, remainingProfit, currency, 50000)</span>;
+&nbsp;
+        // Transfer the NFT to the winning bidder
+<span class="cstat-no" title="statement not covered" >        IERC721(_tokenContract).transferFrom(address(this), auction.highestBidder, _tokenId)</span>;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        emit AuctionEnded(_tokenContract, _tokenId, auction);</span>
+&nbsp;
+        // Remove the auction from storage
+        delete auctionForNFT[_tokenContract][_tokenId];
+    }
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Mon Jul 18 2022 12:17:17 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="../../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../../sorter.js"></script>
+</body>
+</html>

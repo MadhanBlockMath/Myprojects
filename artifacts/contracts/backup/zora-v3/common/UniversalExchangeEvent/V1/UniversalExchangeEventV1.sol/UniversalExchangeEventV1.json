@@ -1,0 +1,76 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "UniversalExchangeEventV1",
+  "sourceName": "contracts/backup/zora-v3/common/UniversalExchangeEvent/V1/UniversalExchangeEventV1.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "userA",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "userB",
+          "type": "address"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "tokenContract",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct UniversalExchangeEventV1.ExchangeDetails",
+          "name": "a",
+          "type": "tuple"
+        },
+        {
+          "components": [
+            {
+              "internalType": "address",
+              "name": "tokenContract",
+              "type": "address"
+            },
+            {
+              "internalType": "uint256",
+              "name": "tokenId",
+              "type": "uint256"
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256"
+            }
+          ],
+          "indexed": false,
+          "internalType": "struct UniversalExchangeEventV1.ExchangeDetails",
+          "name": "b",
+          "type": "tuple"
+        }
+      ],
+      "name": "ExchangeExecuted",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x6080604052348015600f57600080fd5b50603f80601d6000396000f3fe6080604052600080fdfea26469706673582212204691f51da2491c4de71b7cdbf870d1bcfa31d35688db7da0dbd0d5bb5551c49c64736f6c63430008110033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212204691f51da2491c4de71b7cdbf870d1bcfa31d35688db7da0dbd0d5bb5551c49c64736f6c63430008110033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

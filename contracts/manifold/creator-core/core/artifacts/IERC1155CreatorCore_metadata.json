@@ -1,0 +1,1024 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address payable[]",
+						"name": "receivers",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "basisPoints",
+						"type": "uint256[]"
+					}
+				],
+				"name": "DefaultRoyaltiesUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "enabled",
+						"type": "bool"
+					}
+				],
+				"name": "ExtensionApproveTransferUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "ExtensionBlacklisted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "ExtensionRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address payable[]",
+						"name": "receivers",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "basisPoints",
+						"type": "uint256[]"
+					}
+				],
+				"name": "ExtensionRoyaltiesUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "ExtensionUnregistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "permissions",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "MintPermissionsUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address payable[]",
+						"name": "receivers",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "basisPoints",
+						"type": "uint256[]"
+					}
+				],
+				"name": "RoyaltiesUpdated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					}
+				],
+				"name": "blacklistExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "tokenIds",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getExtensions",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getFeeBps",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getFeeRecipients",
+				"outputs": [
+					{
+						"internalType": "address payable[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getFees",
+				"outputs": [
+					{
+						"internalType": "address payable[]",
+						"name": "",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getRoyalties",
+				"outputs": [
+					{
+						"internalType": "address payable[]",
+						"name": "",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "to",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "tokenIds",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "mintBaseExisting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "to",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "uris",
+						"type": "string[]"
+					}
+				],
+				"name": "mintBaseNew",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "to",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "tokenIds",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "mintExtensionExisting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "to",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "uris",
+						"type": "string[]"
+					}
+				],
+				"name": "mintExtensionNew",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "baseURI",
+						"type": "string"
+					}
+				],
+				"name": "registerExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "baseURI",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "baseURIIdentical",
+						"type": "bool"
+					}
+				],
+				"name": "registerExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "royaltyInfo",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "enabled",
+						"type": "bool"
+					}
+				],
+				"name": "setApproveTransferExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "uri",
+						"type": "string"
+					}
+				],
+				"name": "setBaseTokenURI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "uri",
+						"type": "string"
+					}
+				],
+				"name": "setBaseTokenURIExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "uri",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "identical",
+						"type": "bool"
+					}
+				],
+				"name": "setBaseTokenURIExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "permissions",
+						"type": "address"
+					}
+				],
+				"name": "setMintPermissions",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable[]",
+						"name": "receivers",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "basisPoints",
+						"type": "uint256[]"
+					}
+				],
+				"name": "setRoyalties",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable[]",
+						"name": "receivers",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "basisPoints",
+						"type": "uint256[]"
+					}
+				],
+				"name": "setRoyalties",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable[]",
+						"name": "receivers",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "basisPoints",
+						"type": "uint256[]"
+					}
+				],
+				"name": "setRoyaltiesExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "uri",
+						"type": "string"
+					}
+				],
+				"name": "setTokenURI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "tokenIds",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "uris",
+						"type": "string[]"
+					}
+				],
+				"name": "setTokenURI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "tokenId",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "uri",
+						"type": "string[]"
+					}
+				],
+				"name": "setTokenURIExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "uri",
+						"type": "string"
+					}
+				],
+				"name": "setTokenURIExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "prefix",
+						"type": "string"
+					}
+				],
+				"name": "setTokenURIPrefix",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "prefix",
+						"type": "string"
+					}
+				],
+				"name": "setTokenURIPrefixExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenExtension",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					}
+				],
+				"name": "unregisterExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "Core ERC1155 creator interface",
+			"kind": "dev",
+			"methods": {
+				"blacklistExtension(address)": {
+					"details": "blacklist an extension.  Can only be called by contract owner or admin. This function will destroy all ability to reference the metadata of any tokens created by the specified extension. It will also unregister the extension if needed. Returns True if removed, False if already removed."
+				},
+				"burn(address,uint256[],uint256[])": {
+					"details": "burn tokens. Can only be called by token owner or approved address. On burn, calls back to the registered extension's onBurn method"
+				},
+				"getExtensions()": {
+					"details": "gets address of all extensions"
+				},
+				"getRoyalties(uint256)": {
+					"details": "Get royalites of a token.  Returns list of receivers and basisPoints"
+				},
+				"mintBaseExisting(address[],uint256[],uint256[])": {
+					"details": "batch mint existing token with no extension. Can only be called by an admin.",
+					"params": {
+						"amounts": "- Can be a single element array (all recipients get the same amount) or a multi-element array Requirements: If any of the parameters are multi-element arrays, they need to be the same length as other multi-element arrays Examples:    mintBaseExisting(['0x....1', '0x....2'], [1], [10])        Mints 10 of tokenId 1 to each of '0x....1' and '0x....2'.        mintBaseExisting(['0x....1', '0x....2'], [1, 2], [10, 20])        Mints 10 of tokenId 1 to '0x....1' and 20 of tokenId 2 to '0x....2'.        mintBaseExisting(['0x....1'], [1, 2], [10, 20])        Mints 10 of tokenId 1 and 20 of tokenId 2 to '0x....1'.        mintBaseExisting(['0x....1', '0x....2'], [1], [10, 20])        Mints 10 of tokenId 1 to '0x....1' and 20 of tokenId 1 to '0x....2'.    ",
+						"to": "- Can be a single element array (all tokens go to same address) or multi-element array (single token to many recipients)",
+						"tokenIds": "- Can be a single element array (all recipients get the same token) or a multi-element array"
+					}
+				},
+				"mintBaseNew(address[],uint256[],string[])": {
+					"details": "mint a token with no extension. Can only be called by an admin.",
+					"params": {
+						"amounts": "- Can be a single element array (all recipients get the same amount) or a multi-element array",
+						"to": "- Can be a single element array (all tokens go to same address) or multi-element array (single token to many recipients)",
+						"uris": "- If no elements, all tokens use the default uri.                   If any element is an empty string, the corresponding token uses the default uri. Requirements: If to is a multi-element array, then uris must be empty or single element array               If to is a multi-element array, then amounts must be a single element array or a multi-element array of the same size               If to is a single element array, uris must be empty or the same length as amounts Examples:    mintBaseNew(['0x....1', '0x....2'], [1], [])        Mints a single new token, and gives 1 each to '0x....1' and '0x....2'.  Token uses default uri.        mintBaseNew(['0x....1', '0x....2'], [1, 2], [])        Mints a single new token, and gives 1 to '0x....1' and 2 to '0x....2'.  Token uses default uri.        mintBaseNew(['0x....1'], [1, 2], [\"\", \"http://token2.com\"])        Mints two new tokens to '0x....1'. 1 of the first token, 2 of the second.  1st token uses default uri, second uses \"http://token2.com\".    "
+					},
+					"returns": {
+						"_0": "Returns list of tokenIds minted"
+					}
+				},
+				"mintExtensionExisting(address[],uint256[],uint256[])": {
+					"details": "batch mint existing token from extension. Can only be called by a registered extension.",
+					"params": {
+						"amounts": "- Can be a single element array (all recipients get the same amount) or a multi-element array Requirements: If any of the parameters are multi-element arrays, they need to be the same length as other multi-element arrays Examples:    mintExtensionExisting(['0x....1', '0x....2'], [1], [10])        Mints 10 of tokenId 1 to each of '0x....1' and '0x....2'.        mintExtensionExisting(['0x....1', '0x....2'], [1, 2], [10, 20])        Mints 10 of tokenId 1 to '0x....1' and 20 of tokenId 2 to '0x....2'.        mintExtensionExisting(['0x....1'], [1, 2], [10, 20])        Mints 10 of tokenId 1 and 20 of tokenId 2 to '0x....1'.        mintExtensionExisting(['0x....1', '0x....2'], [1], [10, 20])        Mints 10 of tokenId 1 to '0x....1' and 20 of tokenId 1 to '0x....2'.    ",
+						"to": "- Can be a single element array (all tokens go to same address) or multi-element array (single token to many recipients)",
+						"tokenIds": "- Can be a single element array (all recipients get the same token) or a multi-element array"
+					}
+				},
+				"mintExtensionNew(address[],uint256[],string[])": {
+					"details": "mint a token from an extension. Can only be called by a registered extension.",
+					"params": {
+						"amounts": "- Can be a single element array (all recipients get the same amount) or a multi-element array",
+						"to": "- Can be a single element array (all tokens go to same address) or multi-element array (single token to many recipients)",
+						"uris": "- If no elements, all tokens use the default uri.                   If any element is an empty string, the corresponding token uses the default uri. Requirements: If to is a multi-element array, then uris must be empty or single element array               If to is a multi-element array, then amounts must be a single element array or a multi-element array of the same size               If to is a single element array, uris must be empty or the same length as amounts Examples:    mintExtensionNew(['0x....1', '0x....2'], [1], [])        Mints a single new token, and gives 1 each to '0x....1' and '0x....2'.  Token uses default uri.        mintExtensionNew(['0x....1', '0x....2'], [1, 2], [])        Mints a single new token, and gives 1 to '0x....1' and 2 to '0x....2'.  Token uses default uri.        mintExtensionNew(['0x....1'], [1, 2], [\"\", \"http://token2.com\"])        Mints two new tokens to '0x....1'. 1 of the first token, 2 of the second.  1st token uses default uri, second uses \"http://token2.com\".    "
+					},
+					"returns": {
+						"_0": "Returns list of tokenIds minted"
+					}
+				},
+				"registerExtension(address,string)": {
+					"details": "add an extension.  Can only be called by contract owner or admin. extension address must point to a contract implementing ICreatorExtension. Returns True if newly added, False if already added."
+				},
+				"registerExtension(address,string,bool)": {
+					"details": "add an extension.  Can only be called by contract owner or admin. extension address must point to a contract implementing ICreatorExtension. Returns True if newly added, False if already added."
+				},
+				"setApproveTransferExtension(bool)": {
+					"details": "Configure so transfers of tokens created by the caller (must be extension) gets approval from the extension before transferring"
+				},
+				"setBaseTokenURI(string)": {
+					"details": "set the baseTokenURI for tokens with no extension.  Can only be called by owner/admin. For tokens with no uri configured, tokenURI will return \"uri+tokenId\""
+				},
+				"setBaseTokenURIExtension(string)": {
+					"details": "set the baseTokenURI of an extension.  Can only be called by extension."
+				},
+				"setBaseTokenURIExtension(string,bool)": {
+					"details": "set the baseTokenURI of an extension.  Can only be called by extension. For tokens with no uri configured, tokenURI will return \"uri+tokenId\""
+				},
+				"setMintPermissions(address,address)": {
+					"details": "set a permissions contract for an extension.  Used to control minting."
+				},
+				"setRoyalties(address[],uint256[])": {
+					"details": "Set default royalties"
+				},
+				"setRoyalties(uint256,address[],uint256[])": {
+					"details": "Set royalties of a token"
+				},
+				"setRoyaltiesExtension(address,address[],uint256[])": {
+					"details": "Set royalties of an extension"
+				},
+				"setTokenURI(uint256,string)": {
+					"details": "set the tokenURI of a token with no extension.  Can only be called by owner/admin."
+				},
+				"setTokenURI(uint256[],string[])": {
+					"details": "set the tokenURI of multiple tokens with no extension.  Can only be called by owner/admin."
+				},
+				"setTokenURIExtension(uint256,string)": {
+					"details": "set the tokenURI of a token extension.  Can only be called by extension that minted token."
+				},
+				"setTokenURIExtension(uint256[],string[])": {
+					"details": "set the tokenURI of a token extension for multiple tokens.  Can only be called by extension that minted token."
+				},
+				"setTokenURIPrefix(string)": {
+					"details": "set the common prefix for tokens with no extension.  Can only be called by owner/admin. If configured, and a token has a uri set, tokenURI will return \"prefixURI+tokenURI\" Useful if you want to use ipfs/arweave"
+				},
+				"setTokenURIPrefixExtension(string)": {
+					"details": "set the common prefix of an extension.  Can only be called by extension. If configured, and a token has a uri set, tokenURI will return \"prefixURI+tokenURI\" Useful if you want to use ipfs/arweave"
+				},
+				"supportsInterface(bytes4)": {
+					"details": "Returns true if this contract implements the interface defined by `interfaceId`. See the corresponding https://eips.ethereum.org/EIPS/eip-165#how-interfaces-are-identified[EIP section] to learn more about how these ids are created. This function call must use less than 30 000 gas."
+				},
+				"tokenExtension(uint256)": {
+					"details": "get the extension of a given token"
+				},
+				"totalSupply(uint256)": {
+					"details": "Total amount of tokens in with a given tokenId."
+				},
+				"unregisterExtension(address)": {
+					"details": "add an extension.  Can only be called by contract owner or admin. Returns True if removed, False if already removed."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/manifold/creator-core/core/IERC1155CreatorCore.sol": "IERC1155CreatorCore"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 25
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/manifold/creator-core/core/CreatorCore.sol": {
+			"keccak256": "0x45c931cb41ef365ecb1c953fc75cf43546e80f05555090a8e2f65a854d9d65d9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ca74abab601a9158c00ea96a701b4b92a1c3da580f7c6728864d2223c44cf078",
+				"dweb:/ipfs/QmXfLTL9WxVhtmcmJ7vW3SFxBEzMbfSqtx9prdoKUPJhAZ"
+			]
+		},
+		"contracts/manifold/creator-core/core/ICreatorCore.sol": {
+			"keccak256": "0x61a300259ca1484e05b04ece0acc97b9dbf5fbdd7b3d20a6892d8a1d3052362f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://59981fee263486519a6e698f4f8ad5ee8af7c0668aee8bf335d285a06c3b02bb",
+				"dweb:/ipfs/QmabGX8ERpimg3K8w5uSbVqdLXMo6fgizMmVyPPXazmJco"
+			]
+		},
+		"contracts/manifold/creator-core/core/IERC1155CreatorCore.sol": {
+			"keccak256": "0xc91d0050b622fbb41b7516c6a8c75ab6236e6a52feab681d36fb75b8b49fc8c0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f045081bb40c91837c076530bb07b9f8b7fa77cbd1191748a12920f01f1678f8",
+				"dweb:/ipfs/QmP5kx53wBz2eUqZV26ttYJmsHP7R9n3rF6dAbTjVPh5gL"
+			]
+		},
+		"contracts/manifold/creator-core/extensions/ICreatorExtensionTokenURI.sol": {
+			"keccak256": "0xe9aaf27297da3fde02e631e9d0b2e57fe93351d7909e8dfb656a3324b64c6f04",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://addc967bceea45a7190a5cb49d3f278f45caf3149039869da219de2a0d4085cf",
+				"dweb:/ipfs/QmVM3boH9F8JQewzNhFwAubqACYb1CjjQx9ppEoDntHico"
+			]
+		},
+		"contracts/openzeppelin-upgradeable/utils/AddressUpgradeable.sol": {
+			"keccak256": "0xf308459c5ea0cde035b8c3b3d9144086a2c777c46dbe401f634e75dea1aba1b8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e51755c6934703b61e7edb7d3edef985f429be6bef384b15e1b616ea65176934",
+				"dweb:/ipfs/QmQVb4hBJcTMthp5hJquUy5tPsDwgiKQ8nGExckR75G88u"
+			]
+		},
+		"contracts/openzeppelin/security/ReentrancyGuard.sol": {
+			"keccak256": "0x1278c76b840063ff5e14a2d7c5707812c1eabc2342ed040bf862c2d7552102fe",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b9989233808b8f475395f71ea757e277fa167cdac8a24d10f9784783defd313c",
+				"dweb:/ipfs/Qmdg6rbPsShpnzvqKmPVuFk7eYU53oXTPxqUJXd9WLD4vg"
+			]
+		},
+		"contracts/openzeppelin/utils/Strings.sol": {
+			"keccak256": "0x5fa25f305839292fab713256214f2868e0257d29826b14282bbd7f1e34f5af38",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b3de4074848249e00e1336db857e3fa8f78b4fe11d4a887f71050c22023b2132",
+				"dweb:/ipfs/QmbL6k2zFGndQPNPG7vCDivtjKam3quJSrEbRuVsNo4hBw"
+			]
+		},
+		"contracts/openzeppelin/utils/introspection/ERC165.sol": {
+			"keccak256": "0x905cd0ecd91d1de79a4679d745b79cf852ca8ccda5d25d1c49c6bd17a5edc0cf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8dd1601fcd370546d8c06ea1902d7e7364fc490fbf0ebc3004230ef1f5db473c",
+				"dweb:/ipfs/Qmb8zbC3TjWFtcuyP3KEEaegMkPcfeKAcPrwzvkAoMR3cZ"
+			]
+		},
+		"contracts/openzeppelin/utils/introspection/ERC165Checker.sol": {
+			"keccak256": "0x66980e12b7591ded37b4f39ab2fae3d71f7414ee79795b37c2ae4bbc249298ed",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e37200b736c9ba504a42a78d8627fb3a2869e9d3af99b1817499fc9f48742477",
+				"dweb:/ipfs/QmUx7hZV18VLQwynsDUerQ3QasbtTgvsuwAHqL83shN8KS"
+			]
+		},
+		"contracts/openzeppelin/utils/introspection/IERC165.sol": {
+			"keccak256": "0x6aa521718bf139b44ce56f194f6aea1d590cacef995b5a84703fb1579fa49be9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://100f8d367b5e94eb9cb991914f1de133cf272654c0708faa893bbc17a5b35b93",
+				"dweb:/ipfs/QmZeBojmgXq821dL1TJKFb58B1FogM9jL3u7hXQ8hTEBKT"
+			]
+		},
+		"contracts/openzeppelin/utils/structs/EnumerableSet.sol": {
+			"keccak256": "0xfac19be5f0d198ac556731a5589a4ae1c0c1622437d0b6b53b2cf3f317071acd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0c0f5ca56c1bfe37e9a9911140681e98c360f9fd225d06fcf2c607169ac76b3b",
+				"dweb:/ipfs/QmZYRcvZqTiLcgGRx66RceXNwWqeUS5bDQGNo1gS3hhwec"
+			]
+		}
+	},
+	"version": 1
+}

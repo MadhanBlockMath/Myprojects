@@ -1,0 +1,1632 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "AdminApproved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "AdminRevoked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "ApprovalForAll",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address payable[]",
+						"name": "receivers",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "basisPoints",
+						"type": "uint256[]"
+					}
+				],
+				"name": "DefaultRoyaltiesUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "bool",
+						"name": "enabled",
+						"type": "bool"
+					}
+				],
+				"name": "ExtensionApproveTransferUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "ExtensionBlacklisted",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "ExtensionRegistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "address payable[]",
+						"name": "receivers",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "basisPoints",
+						"type": "uint256[]"
+					}
+				],
+				"name": "ExtensionRoyaltiesUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "ExtensionUnregistered",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "permissions",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "MintPermissionsUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address payable[]",
+						"name": "receivers",
+						"type": "address[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "basisPoints",
+						"type": "uint256[]"
+					}
+				],
+				"name": "RoyaltiesUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256[]",
+						"name": "values",
+						"type": "uint256[]"
+					}
+				],
+				"name": "TransferBatch",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "TransferSingle",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "value",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "URI",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "admin",
+						"type": "address"
+					}
+				],
+				"name": "approveAdmin",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					}
+				],
+				"name": "balanceOf",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "accounts",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					}
+				],
+				"name": "balanceOfBatch",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					}
+				],
+				"name": "blacklistExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "tokenIds",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAdmins",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "admins",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getExtensions",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "extensions",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getFeeBps",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getFeeRecipients",
+				"outputs": [
+					{
+						"internalType": "address payable[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getFees",
+				"outputs": [
+					{
+						"internalType": "address payable[]",
+						"name": "",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "getRoyalties",
+				"outputs": [
+					{
+						"internalType": "address payable[]",
+						"name": "",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "initialize",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "admin",
+						"type": "address"
+					}
+				],
+				"name": "isAdmin",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					}
+				],
+				"name": "isApprovedForAll",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "to",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "tokenIds",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "mintBaseExisting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "to",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "uris",
+						"type": "string[]"
+					}
+				],
+				"name": "mintBaseNew",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "to",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "tokenIds",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					}
+				],
+				"name": "mintExtensionExisting",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "to",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "uris",
+						"type": "string[]"
+					}
+				],
+				"name": "mintExtensionNew",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "tokenIds",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "baseURI",
+						"type": "string"
+					}
+				],
+				"name": "registerExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "baseURI",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "baseURIIdentical",
+						"type": "bool"
+					}
+				],
+				"name": "registerExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "admin",
+						"type": "address"
+					}
+				],
+				"name": "revokeAdmin",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"name": "royaltyInfo",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "ids",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "amounts",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "safeBatchTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "from",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "to",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "id",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes",
+						"name": "data",
+						"type": "bytes"
+					}
+				],
+				"name": "safeTransferFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "operator",
+						"type": "address"
+					},
+					{
+						"internalType": "bool",
+						"name": "approved",
+						"type": "bool"
+					}
+				],
+				"name": "setApprovalForAll",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bool",
+						"name": "enabled",
+						"type": "bool"
+					}
+				],
+				"name": "setApproveTransferExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "uri_",
+						"type": "string"
+					}
+				],
+				"name": "setBaseTokenURI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "uri_",
+						"type": "string"
+					}
+				],
+				"name": "setBaseTokenURIExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "uri_",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "identical",
+						"type": "bool"
+					}
+				],
+				"name": "setBaseTokenURIExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"internalType": "address",
+						"name": "permissions",
+						"type": "address"
+					}
+				],
+				"name": "setMintPermissions",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable[]",
+						"name": "receivers",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "basisPoints",
+						"type": "uint256[]"
+					}
+				],
+				"name": "setRoyalties",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address payable[]",
+						"name": "receivers",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "basisPoints",
+						"type": "uint256[]"
+					}
+				],
+				"name": "setRoyalties",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					},
+					{
+						"internalType": "address payable[]",
+						"name": "receivers",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "basisPoints",
+						"type": "uint256[]"
+					}
+				],
+				"name": "setRoyaltiesExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "uri_",
+						"type": "string"
+					}
+				],
+				"name": "setTokenURI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "tokenIds",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "uris",
+						"type": "string[]"
+					}
+				],
+				"name": "setTokenURI",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "tokenIds",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "string[]",
+						"name": "uris",
+						"type": "string[]"
+					}
+				],
+				"name": "setTokenURIExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "uri_",
+						"type": "string"
+					}
+				],
+				"name": "setTokenURIExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "prefix",
+						"type": "string"
+					}
+				],
+				"name": "setTokenURIPrefix",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "prefix",
+						"type": "string"
+					}
+				],
+				"name": "setTokenURIPrefixExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "tokenExtension",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "totalSupply",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "extension",
+						"type": "address"
+					}
+				],
+				"name": "unregisterExtension",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					}
+				],
+				"name": "uri",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"details": "ERC1155Creator implementation",
+			"kind": "dev",
+			"methods": {
+				"approveAdmin(address)": {
+					"details": "See {IAdminControl-approveAdmin}."
+				},
+				"balanceOf(address,uint256)": {
+					"details": "See {IERC1155-balanceOf}. Requirements: - `account` cannot be the zero address."
+				},
+				"balanceOfBatch(address[],uint256[])": {
+					"details": "See {IERC1155-balanceOfBatch}. Requirements: - `accounts` and `ids` must have the same length."
+				},
+				"blacklistExtension(address)": {
+					"details": "See {ICreatorCore-blacklistExtension}."
+				},
+				"burn(address,uint256[],uint256[])": {
+					"details": "See {IERC1155CreatorCore-burn}."
+				},
+				"getAdmins()": {
+					"details": "See {IAdminControl-getAdmins}."
+				},
+				"getExtensions()": {
+					"details": "See {ICreatorCore-getExtensions}."
+				},
+				"getFeeBps(uint256)": {
+					"details": "{See ICreatorCore-getFeeBps}."
+				},
+				"getFeeRecipients(uint256)": {
+					"details": "{See ICreatorCore-getFeeRecipients}."
+				},
+				"getFees(uint256)": {
+					"details": "{See ICreatorCore-getFees}."
+				},
+				"getRoyalties(uint256)": {
+					"details": "{See ICreatorCore-getRoyalties}."
+				},
+				"isAdmin(address)": {
+					"details": "See {IAdminControl-isAdmin}."
+				},
+				"isApprovedForAll(address,address)": {
+					"details": "See {IERC1155-isApprovedForAll}."
+				},
+				"mintBaseExisting(address[],uint256[],uint256[])": {
+					"details": "See {IERC1155CreatorCore-mintBaseExisting}."
+				},
+				"mintBaseNew(address[],uint256[],string[])": {
+					"details": "See {IERC1155CreatorCore-mintBaseNew}."
+				},
+				"mintExtensionExisting(address[],uint256[],uint256[])": {
+					"details": "See {IERC1155CreatorCore-mintExtensionExisting}."
+				},
+				"mintExtensionNew(address[],uint256[],string[])": {
+					"details": "See {IERC1155CreatorCore-mintExtensionNew}."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"registerExtension(address,string)": {
+					"details": "See {ICreatorCore-registerExtension}."
+				},
+				"registerExtension(address,string,bool)": {
+					"details": "See {ICreatorCore-registerExtension}."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"revokeAdmin(address)": {
+					"details": "See {IAdminControl-revokeAdmin}."
+				},
+				"royaltyInfo(uint256,uint256)": {
+					"details": "{See ICreatorCore-royaltyInfo}."
+				},
+				"safeBatchTransferFrom(address,address,uint256[],uint256[],bytes)": {
+					"details": "See {IERC1155-safeBatchTransferFrom}."
+				},
+				"safeTransferFrom(address,address,uint256,uint256,bytes)": {
+					"details": "See {IERC1155-safeTransferFrom}."
+				},
+				"setApprovalForAll(address,bool)": {
+					"details": "See {IERC1155-setApprovalForAll}."
+				},
+				"setApproveTransferExtension(bool)": {
+					"details": "See {ICreatorCore-setApproveTransferExtension}."
+				},
+				"setBaseTokenURI(string)": {
+					"details": "See {ICreatorCore-setBaseTokenURI}."
+				},
+				"setBaseTokenURIExtension(string)": {
+					"details": "See {ICreatorCore-setBaseTokenURIExtension}."
+				},
+				"setBaseTokenURIExtension(string,bool)": {
+					"details": "See {ICreatorCore-setBaseTokenURIExtension}."
+				},
+				"setMintPermissions(address,address)": {
+					"details": "See {ICreatorCore-setMintPermissions}."
+				},
+				"setRoyalties(address[],uint256[])": {
+					"details": "See {ICreatorCore-setRoyalties}."
+				},
+				"setRoyalties(uint256,address[],uint256[])": {
+					"details": "See {ICreatorCore-setRoyalties}."
+				},
+				"setRoyaltiesExtension(address,address[],uint256[])": {
+					"details": "See {ICreatorCore-setRoyaltiesExtension}."
+				},
+				"setTokenURI(uint256,string)": {
+					"details": "See {ICreatorCore-setTokenURI}."
+				},
+				"setTokenURI(uint256[],string[])": {
+					"details": "See {ICreatorCore-setTokenURI}."
+				},
+				"setTokenURIExtension(uint256,string)": {
+					"details": "See {ICreatorCore-setTokenURIExtension}."
+				},
+				"setTokenURIExtension(uint256[],string[])": {
+					"details": "See {ICreatorCore-setTokenURIExtension}."
+				},
+				"setTokenURIPrefix(string)": {
+					"details": "See {ICreatorCore-setTokenURIPrefix}."
+				},
+				"setTokenURIPrefixExtension(string)": {
+					"details": "See {ICreatorCore-setTokenURIPrefixExtension}."
+				},
+				"supportsInterface(bytes4)": {
+					"details": "See {IERC165-supportsInterface}."
+				},
+				"tokenExtension(uint256)": {
+					"details": "See {IERC1155CreatorCore-tokenExtension}."
+				},
+				"totalSupply(uint256)": {
+					"details": "Total amount of tokens in with a given id."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"unregisterExtension(address)": {
+					"details": "See {ICreatorCore-unregisterExtension}."
+				},
+				"uri(uint256)": {
+					"details": "See {IERC721Metadata-tokenURI}."
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"initialize()": {
+					"notice": "Initializer"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/manifold/creator-core/ERC1155CreatorImplementation.sol": "ERC1155CreatorImplementation"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 25
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/manifold/creator-core/ERC1155CreatorImplementation.sol": {
+			"keccak256": "0x51d8e6e7157204e07569b65662414982eeb6cba57d40994b79b24acde9404442",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://02c4ab5404485cad08f2ff57b0eb5542df2701ef1334fc00de2209754dd33135",
+				"dweb:/ipfs/QmTFvkHNRTMobHpVA3nGZ5KS3j5QqUMh6VZJ2ZE1vCHje9"
+			]
+		},
+		"contracts/manifold/creator-core/core/CreatorCore.sol": {
+			"keccak256": "0x45c931cb41ef365ecb1c953fc75cf43546e80f05555090a8e2f65a854d9d65d9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ca74abab601a9158c00ea96a701b4b92a1c3da580f7c6728864d2223c44cf078",
+				"dweb:/ipfs/QmXfLTL9WxVhtmcmJ7vW3SFxBEzMbfSqtx9prdoKUPJhAZ"
+			]
+		},
+		"contracts/manifold/creator-core/core/ERC1155CreatorCore.sol": {
+			"keccak256": "0x1332fff4d0c6f0a77b66fd0a3bdf2fc29eb523c3284d48ab5bcaa2cdf3d9bb24",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://27950dc6a5c4750da50ce206afe99ce475fc395ac0fd541af4125375b2bcc0d7",
+				"dweb:/ipfs/QmaTZp7rFJsbokixjCtB3fzbhiKXJLruKrxgMzT28VaggZ"
+			]
+		},
+		"contracts/manifold/creator-core/core/ICreatorCore.sol": {
+			"keccak256": "0x61a300259ca1484e05b04ece0acc97b9dbf5fbdd7b3d20a6892d8a1d3052362f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://59981fee263486519a6e698f4f8ad5ee8af7c0668aee8bf335d285a06c3b02bb",
+				"dweb:/ipfs/QmabGX8ERpimg3K8w5uSbVqdLXMo6fgizMmVyPPXazmJco"
+			]
+		},
+		"contracts/manifold/creator-core/core/IERC1155CreatorCore.sol": {
+			"keccak256": "0xc91d0050b622fbb41b7516c6a8c75ab6236e6a52feab681d36fb75b8b49fc8c0",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f045081bb40c91837c076530bb07b9f8b7fa77cbd1191748a12920f01f1678f8",
+				"dweb:/ipfs/QmP5kx53wBz2eUqZV26ttYJmsHP7R9n3rF6dAbTjVPh5gL"
+			]
+		},
+		"contracts/manifold/creator-core/extensions/ERC1155/IERC1155CreatorExtensionApproveTransfer.sol": {
+			"keccak256": "0x71af9d1b66d5d2883d372b18e94119207356a2f76a8017da5541660d3630becf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5ec41e45c49d63981c90b3bbec84cf07aed5dacbae09c077fd3df641e66360a1",
+				"dweb:/ipfs/QmfX3FzpmCeaDAX4WAwrJQjKjvyvAixAxWHX2HDem7EABh"
+			]
+		},
+		"contracts/manifold/creator-core/extensions/ERC1155/IERC1155CreatorExtensionBurnable.sol": {
+			"keccak256": "0xb2fbd17a415a88f6f65c2564b3eba2a9bdad6f124471deddfec03eed60cc5df2",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0cf7d69b46357d06c5cd543de551a1643c72bf4fa2614c598bbe8b71a71a4c46",
+				"dweb:/ipfs/QmWN2Bg3oho6r7KfmLzpWAqfHa45LWDWWobymSR9nyv2Eu"
+			]
+		},
+		"contracts/manifold/creator-core/extensions/ICreatorExtensionTokenURI.sol": {
+			"keccak256": "0xe9aaf27297da3fde02e631e9d0b2e57fe93351d7909e8dfb656a3324b64c6f04",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://addc967bceea45a7190a5cb49d3f278f45caf3149039869da219de2a0d4085cf",
+				"dweb:/ipfs/QmVM3boH9F8JQewzNhFwAubqACYb1CjjQx9ppEoDntHico"
+			]
+		},
+		"contracts/manifold/creator-core/permissions/ERC1155/IERC1155CreatorMintPermissions.sol": {
+			"keccak256": "0x6410599bbe3ef46db316a6583e6617a990c3c67d73d6f2d430867e3a04adcccf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9107d67d6a0a5571b7a263016f2683aaceaf09a172736f8d0e6f7ccd81615976",
+				"dweb:/ipfs/Qma5mzKCMnpAipdsqqbKe1zqj2dbGQ8HhEAv2ZQvyEoCQJ"
+			]
+		},
+		"contracts/manifold/libraries-solidity/access/AdminControlUpgradeable.sol": {
+			"keccak256": "0xa417c31dd051a95328bdc69b0efbc1df6387cb0563a60aa9ced1ed3eeb79f30f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://f0e847c0cb37dcfbc92aa771c145de141c128e4f02021b9ca5fa12278a6f0721",
+				"dweb:/ipfs/QmXRGxQm1f2gx2f8yQcTRFzSaAuhLkGJ5s3gziceQM2mQQ"
+			]
+		},
+		"contracts/manifold/libraries-solidity/access/IAdminControl.sol": {
+			"keccak256": "0x13addc422ab45458b8ef38088ca34f8f788d94d946578f0576e2f2ddb3d9cde1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5aa10662ce262820ff173773f8a5f78ef0e2ba8aaf328804c3fe6903e43b7782",
+				"dweb:/ipfs/QmctJDefviJUDmj2jQAAD3esgTyBrrxt3W1d6eGToAShjP"
+			]
+		},
+		"contracts/openzeppelin-upgradeable/access/OwnableUpgradeable.sol": {
+			"keccak256": "0xd0fc241d70f27a08c43c0c9e5a15d2661a643d8db46c219b2322bef8a34bbdd7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://272fdc13ea6d62470f1009a1adf0d28b67be2c75415e9f24eee38164dd69fb04",
+				"dweb:/ipfs/QmfZDcxQEFdAi1AwMTHozZJrwFoUCEZnbcJcRhqmahuTBR"
+			]
+		},
+		"contracts/openzeppelin-upgradeable/proxy/utils/Initializable.sol": {
+			"keccak256": "0xaef5d4385f71461228708fcb45e7c531a05d14e69d5414fd2b3bdee7d8e26202",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ffff687c7d15eb33d838e97da063fbb7ac3223852c064e59c221e7ef1d7bb27b",
+				"dweb:/ipfs/QmNw45zDy6urmWCSsDTbfmjSW9mUD41hzDNNSATZQFpauw"
+			]
+		},
+		"contracts/openzeppelin-upgradeable/token/ERC1155/ERC1155Upgradeable.sol": {
+			"keccak256": "0x3de207c7b4a7a7499e6280a88ea4842c3a0370e8a52e8a78487107a2fcb4775b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2aa10fbfad87e666b748ef525c4c37deca8efa7f6d67a5ba51e79196d0774f2d",
+				"dweb:/ipfs/QmRPDnxLVDfFGYy1Z8oszUU826W63ztM9h2yAjymdvkHX2"
+			]
+		},
+		"contracts/openzeppelin-upgradeable/token/ERC1155/IERC1155ReceiverUpgradeable.sol": {
+			"keccak256": "0x980bc5aa2a52f4c3717438bd5ce6a1965c5512ae67d951b60f7e7bd85f6d03d3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e384fba5a0ac1f98c69a5cf34866fa43c3b351df6b5d8347afffef6f29eb2842",
+				"dweb:/ipfs/QmaN1reqpZaCH2cqpjirrd74JjxmJtEwvsTUzhR71kZqXB"
+			]
+		},
+		"contracts/openzeppelin-upgradeable/token/ERC1155/IERC1155Upgradeable.sol": {
+			"keccak256": "0x9722ee87ac04928b3c3b82d2721284861992dbf9ba8cd85408939e0e5d891deb",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://1c11cf9c20fef7a8020bf71c86059274d0514695ffd0793e70178956c61aa119",
+				"dweb:/ipfs/QmadgMUNGsTdvn9GJ7EVqssi4nhWTLoTtt2ZmecdvisEZy"
+			]
+		},
+		"contracts/openzeppelin-upgradeable/token/ERC1155/extensions/IERC1155MetadataURIUpgradeable.sol": {
+			"keccak256": "0x451b31b1fa40e11df57a78e3265a132b3e721708f0737cb3ac413343e0954bd4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ba51b9049b6f93e6f1ccb8fdb696b4a110b6fb0cccbcc493fa0a7a2aadd33b68",
+				"dweb:/ipfs/QmXUQXPALnP8PZ4Vny7pp9gCg64xAD9cXU34Z2mEAkQXDj"
+			]
+		},
+		"contracts/openzeppelin-upgradeable/utils/AddressUpgradeable.sol": {
+			"keccak256": "0xf308459c5ea0cde035b8c3b3d9144086a2c777c46dbe401f634e75dea1aba1b8",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e51755c6934703b61e7edb7d3edef985f429be6bef384b15e1b616ea65176934",
+				"dweb:/ipfs/QmQVb4hBJcTMthp5hJquUy5tPsDwgiKQ8nGExckR75G88u"
+			]
+		},
+		"contracts/openzeppelin-upgradeable/utils/ContextUpgradeable.sol": {
+			"keccak256": "0x0c34de2f75ee9ab06bf9151824be575885d0a9b460c292476a260578fb5a4e1c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://2125524ea896700181f25ee543d35a980b9477eaf13fd1878ae24be5dcc3ba75",
+				"dweb:/ipfs/QmXw9DTW1t1UiTZanfESSJ6jm2xVSQpsdsdKnBTYeBnwqh"
+			]
+		},
+		"contracts/openzeppelin-upgradeable/utils/introspection/ERC165Upgradeable.sol": {
+			"keccak256": "0x8c5737e80521ac5e76c0d9d2cdb67647906fdadeb296644910eeecb31042e1da",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://029725970d69465cca169353fa146f716e557bd974a0e2356b7791095469788c",
+				"dweb:/ipfs/QmQjDRaegdUPcwyyzygnBGm68cdLBQ5BHxHqPi8bGW74GX"
+			]
+		},
+		"contracts/openzeppelin-upgradeable/utils/introspection/IERC165Upgradeable.sol": {
+			"keccak256": "0x650712f855228b7cdeb90738d99dd33ff3a7c9770914ff03eb93f90218fe164b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5d61d29cfb52a862da981f6688772dd009132757bcb85e4be8be506db1ed71f9",
+				"dweb:/ipfs/QmWWHRKr5aTxyU4TRehnU6toBctgi217toZdth6JqYrh5y"
+			]
+		},
+		"contracts/openzeppelin/security/ReentrancyGuard.sol": {
+			"keccak256": "0x1278c76b840063ff5e14a2d7c5707812c1eabc2342ed040bf862c2d7552102fe",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b9989233808b8f475395f71ea757e277fa167cdac8a24d10f9784783defd313c",
+				"dweb:/ipfs/Qmdg6rbPsShpnzvqKmPVuFk7eYU53oXTPxqUJXd9WLD4vg"
+			]
+		},
+		"contracts/openzeppelin/utils/Strings.sol": {
+			"keccak256": "0x5fa25f305839292fab713256214f2868e0257d29826b14282bbd7f1e34f5af38",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b3de4074848249e00e1336db857e3fa8f78b4fe11d4a887f71050c22023b2132",
+				"dweb:/ipfs/QmbL6k2zFGndQPNPG7vCDivtjKam3quJSrEbRuVsNo4hBw"
+			]
+		},
+		"contracts/openzeppelin/utils/introspection/ERC165.sol": {
+			"keccak256": "0x905cd0ecd91d1de79a4679d745b79cf852ca8ccda5d25d1c49c6bd17a5edc0cf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8dd1601fcd370546d8c06ea1902d7e7364fc490fbf0ebc3004230ef1f5db473c",
+				"dweb:/ipfs/Qmb8zbC3TjWFtcuyP3KEEaegMkPcfeKAcPrwzvkAoMR3cZ"
+			]
+		},
+		"contracts/openzeppelin/utils/introspection/ERC165Checker.sol": {
+			"keccak256": "0x66980e12b7591ded37b4f39ab2fae3d71f7414ee79795b37c2ae4bbc249298ed",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://e37200b736c9ba504a42a78d8627fb3a2869e9d3af99b1817499fc9f48742477",
+				"dweb:/ipfs/QmUx7hZV18VLQwynsDUerQ3QasbtTgvsuwAHqL83shN8KS"
+			]
+		},
+		"contracts/openzeppelin/utils/introspection/IERC165.sol": {
+			"keccak256": "0x6aa521718bf139b44ce56f194f6aea1d590cacef995b5a84703fb1579fa49be9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://100f8d367b5e94eb9cb991914f1de133cf272654c0708faa893bbc17a5b35b93",
+				"dweb:/ipfs/QmZeBojmgXq821dL1TJKFb58B1FogM9jL3u7hXQ8hTEBKT"
+			]
+		},
+		"contracts/openzeppelin/utils/structs/EnumerableSet.sol": {
+			"keccak256": "0xfac19be5f0d198ac556731a5589a4ae1c0c1622437d0b6b53b2cf3f317071acd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0c0f5ca56c1bfe37e9a9911140681e98c360f9fd225d06fcf2c607169ac76b3b",
+				"dweb:/ipfs/QmZYRcvZqTiLcgGRx66RceXNwWqeUS5bDQGNo1gS3hhwec"
+			]
+		}
+	},
+	"version": 1
+}

@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for mojito/StandardizedZoraNFT.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">mojito/</a> StandardizedZoraNFT.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>0/26</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/6</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>0/13</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>0/26</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: GPL-3.0
+pragma solidity ^0.8.0;
+pragma experimental ABIEncoderV2;
+&nbsp;
+import "./ZoraMedia.sol";
+import "./Strings.sol";
+import "../openzeppelin/access/Ownable.sol";
+&nbsp;
+contract OwnableDelegateProxy {}
+&nbsp;
+contract ProxyRegistry {
+    mapping(address =&gt; OwnableDelegateProxy) public proxies;
+}
+&nbsp;
+contract StandardizedZoraNFT is ZoraMedia, Ownable {
+    using Strings for string;
+&nbsp;
+    address proxyRegistryAddress;
+&nbsp;
+    string internal baseTokenURI;
+    /// @dev Suffix is needed because when using a folder uploaded to Arweave for metadata storage, Arweave gateways return content-type as specified in the path manifest, which is determined by file extension and defaults to `application/octet-stream`, which potentially could trip up consumers of the metadata URI that are strictly checking content-type returned for JSON, so we need to suffix uploaded files with `.json` to set the content-type correctly (unless we built our own path manifest rather than using arweave-deploy helpers).
+    string internal baseTokenURISuffix;
+    string internal contractMetadataURI;
+&nbsp;
+<span class="fstat-no" title="function not covered" >    constructor(</span>
+        string memory name,
+        string memory symbol,
+        string memory _baseTokenURI,
+        string memory _baseTokenURISuffix,
+        string memory _contractMetadataURI,
+        address _marketContractAddr,
+        address _proxyRegistryAddress
+    ) public ZoraMedia(name, symbol, _marketContractAddr) {
+<span class="cstat-no" title="statement not covered" >        baseTokenURI = _baseTokenURI</span>;
+<span class="cstat-no" title="statement not covered" >        baseTokenURISuffix = _baseTokenURISuffix</span>;
+<span class="cstat-no" title="statement not covered" >        contractMetadataURI = _contractMetadataURI</span>;
+<span class="cstat-no" title="statement not covered" >        proxyRegistryAddress = _proxyRegistryAddress</span>;
+    }
+&nbsp;
+    /**
+     * @dev Mints a token to an address.
+     * @param to Address of the creator and initial owner of the token
+     * @param bidShares Zora bid share settings
+     */
+<span class="fstat-no" title="function not covered" >    function mintTo(address to, IMarket.BidShares calldata bidShares)</span>
+        external
+        onlyOwner
+    {
+<span class="cstat-no" title="statement not covered" >        _mintForCreator(to, bidShares)</span>;
+    }
+&nbsp;
+    /**
+     * @dev Mints a token to an address.
+     * @param to Address of the creator and initial owner of the tokens
+     * @param amount Number of tokens to mint
+     * @param bidShares Zora bid share settings for all the tokens
+     */
+<span class="fstat-no" title="function not covered" >    function mintBatchTo(</span>
+        address to,
+        uint256 amount,
+        IMarket.BidShares calldata bidShares
+    ) external onlyOwner {
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; amount; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            _mintForCreator(to, bidShares)</span>;
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function safeBatchTransferFrom(</span>
+        address from,
+        address to,
+        uint256[] calldata tokenIDs
+    ) external {
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; tokenIDs.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            safeTransferFrom(from, to, tokenIDs[i])</span>;
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function batchTransferFrom(</span>
+        address from,
+        address to,
+        uint256[] calldata tokenIDs
+    ) external {
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; tokenIDs.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            transferFrom(from, to, tokenIDs[i])</span>;
+        }
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function updateBaseURI(string calldata _baseTokenURI) external onlyOwner {</span>
+<span class="cstat-no" title="statement not covered" >        baseTokenURI = _baseTokenURI</span>;
+        // @TODO we should emit an event, see e.g. Zora contrat https://github.com/ourzora/core/blob/410849e5b4c9afd5d3c4d03507744405750760d7/contracts/Media.sol#L380
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function updateBaseURISuffix(string calldata _baseTokenURISuffix)</span>
+        external
+        onlyOwner
+    {
+<span class="cstat-no" title="statement not covered" >        baseTokenURISuffix = _baseTokenURISuffix</span>;
+        // @TODO we should emit an event
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function ownerRemoveBid(uint256 tokenID, address bidder)</span>
+        external
+        nonReentrant
+        onlyTokenCreated(tokenID)
+        onlyOwner
+    {
+<span class="cstat-no" title="statement not covered" >        IMarket(marketContract).removeBid(tokenID, bidder)</span>;
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function ownerBatchRemoveBids(</span>
+        uint256[] calldata tokenIDs,
+        address[] calldata bidders
+    ) external nonReentrant onlyOwner {
+<span class="cstat-no" title="statement not covered" >        require(</span>
+            tokenIDs.length == bidders.length,
+            "StandardizedZoraNFT: tokenIds and bidders must be the same length"
+        );
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        for (uint256 i = 0; i &lt; tokenIDs.length; i++) {</span>
+<span class="cstat-no" title="statement not covered" >            require(</span>
+                _exists(tokenIDs[i]),
+                "StandardizedZoraNFT: token with that id does not exist"
+            );
+<span class="cstat-no" title="statement not covered" >            IMarket(marketContract).removeBid(tokenIDs[i], bidders[i])</span>;
+        }
+    }
+&nbsp;
+    /** Used by OpenSea (and maybe others) to get information about this contract. */
+<span class="fstat-no" title="function not covered" >    function contractURI() public view returns (string memory) {</span>
+<span class="cstat-no" title="statement not covered" >        return contractMetadataURI;</span>
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function updateContractURI(string calldata _contractMetadataURI)</span>
+        external
+        onlyOwner
+    {
+<span class="cstat-no" title="statement not covered" >        contractMetadataURI = _contractMetadataURI</span>;
+        // @TODO we should emit an event
+    }
+&nbsp;
+<span class="fstat-no" title="function not covered" >    function tokenURI(uint256 tokenId)</span>
+        public
+        view
+        override
+        onlyTokenCreated(tokenId)
+        returns (string memory)
+    {
+<span class="cstat-no" title="statement not covered" >        string memory baseAndTokenURI =</span>
+            Strings.strConcat(baseTokenURI, Strings.uint2str(tokenId));
+<span class="cstat-no" title="statement not covered" >        return</span>
+            bytes(baseTokenURISuffix).length &gt; 0
+                ? Strings.strConcat(baseAndTokenURI, baseTokenURISuffix)
+                : baseAndTokenURI;
+    }
+&nbsp;
+    /**
+     * Override isApprovedForAll to whitelist user's OpenSea proxy accounts to enable gas-less listings.
+     */
+<span class="fstat-no" title="function not covered" >    function isApprovedForAll(address owner, address operator)</span>
+        public
+        view
+        override
+        returns (bool)
+    {
+        // Whitelist OpenSea proxy contract for easy trading.
+<span class="cstat-no" title="statement not covered" >        ProxyRegistry proxyRegistry = ProxyRegistry(proxyRegistryAddress);</span>
+<span class="cstat-no" title="statement not covered" >        if (address(proxyRegistry.proxies(owner)) == operator) {</span>
+<span class="cstat-no" title="statement not covered" >            return true;</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return super.isApprovedForAll(owner, operator);</span>
+    }
+}
+&nbsp;</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jul 19 2022 17:28:17 GMT+0530 (India Standard Time)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

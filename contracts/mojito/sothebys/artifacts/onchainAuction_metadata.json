@@ -1,0 +1,1132 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_platformAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint16",
+						"name": "_platformFeePercentage",
+						"type": "uint16"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "AdminApproved",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "sender",
+						"type": "address"
+					}
+				],
+				"name": "AdminRevoked",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "auctionId",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "bidder",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "bidAmount",
+						"type": "uint256"
+					}
+				],
+				"name": "AuctionBid",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "nftContractAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "quantityOf1155",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "tokenOwnerAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "minimumBidCryptoPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "paymentCurrency",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "whitelistedBuyers",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "blacklistedBuyers",
+								"type": "bytes32"
+							},
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "paymentSettlementAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "address",
+										"name": "taxSettlementAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "address",
+										"name": "platformSettlementAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "uint16",
+										"name": "platformFeePercentage",
+										"type": "uint16"
+									},
+									{
+										"internalType": "address",
+										"name": "commissionAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "uint16",
+										"name": "commissionFeePercentage",
+										"type": "uint16"
+									}
+								],
+								"internalType": "struct onchainAuction.settlementList",
+								"name": "paymentSettlement",
+								"type": "tuple"
+							}
+						],
+						"indexed": true,
+						"internalType": "struct onchainAuction.createAuctionList",
+						"name": "createdDetails",
+						"type": "tuple"
+					}
+				],
+				"name": "AuctionCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "auctionId",
+						"type": "string"
+					},
+					{
+						"indexed": true,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "tokenOwner",
+						"type": "address"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "nftContractAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "quantityOf1155",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "tokenOwnerAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "minimumBidCryptoPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "paymentCurrency",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "whitelistedBuyers",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "blacklistedBuyers",
+								"type": "bytes32"
+							},
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "paymentSettlementAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "address",
+										"name": "taxSettlementAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "address",
+										"name": "platformSettlementAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "uint16",
+										"name": "platformFeePercentage",
+										"type": "uint16"
+									},
+									{
+										"internalType": "address",
+										"name": "commissionAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "uint16",
+										"name": "commissionFeePercentage",
+										"type": "uint16"
+									}
+								],
+								"internalType": "struct onchainAuction.settlementList",
+								"name": "paymentSettlement",
+								"type": "tuple"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct onchainAuction.createAuctionList",
+						"name": "createdDetails",
+						"type": "tuple"
+					},
+					{
+						"components": [
+							{
+								"internalType": "uint32",
+								"name": "startTime",
+								"type": "uint32"
+							},
+							{
+								"internalType": "uint32",
+								"name": "endTime",
+								"type": "uint32"
+							},
+							{
+								"internalType": "address[2]",
+								"name": "bidder",
+								"type": "address[2]"
+							},
+							{
+								"internalType": "uint256[2]",
+								"name": "amount",
+								"type": "uint256[2]"
+							}
+						],
+						"indexed": false,
+						"internalType": "struct onchainAuction.bidHistory",
+						"name": "AuctionHistory",
+						"type": "tuple"
+					}
+				],
+				"name": "AuctionEnded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "string",
+						"name": "auctionId",
+						"type": "string"
+					}
+				],
+				"name": "CancellAuction",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "previousOwner",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "OwnershipTransferred",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "tokenContract",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "address",
+						"name": "recipient",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "RoyaltyPayout",
+				"type": "event"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "fallback"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "admin",
+						"type": "address"
+					}
+				],
+				"name": "approveAdmin",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "auctionId",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "bidAmount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bytes32[]",
+						"name": "proof",
+						"type": "bytes32[]"
+					}
+				],
+				"name": "bid",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "auctionId",
+						"type": "string"
+					}
+				],
+				"name": "cancelAuction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "auctionId",
+						"type": "string"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "nftContractAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "tokenId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "quantityOf1155",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "tokenOwnerAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "minimumBidCryptoPrice",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "paymentCurrency",
+								"type": "address"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "whitelistedBuyers",
+								"type": "bytes32"
+							},
+							{
+								"internalType": "bytes32",
+								"name": "blacklistedBuyers",
+								"type": "bytes32"
+							},
+							{
+								"components": [
+									{
+										"internalType": "address",
+										"name": "paymentSettlementAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "address",
+										"name": "taxSettlementAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "address",
+										"name": "platformSettlementAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "uint16",
+										"name": "platformFeePercentage",
+										"type": "uint16"
+									},
+									{
+										"internalType": "address",
+										"name": "commissionAddress",
+										"type": "address"
+									},
+									{
+										"internalType": "uint16",
+										"name": "commissionFeePercentage",
+										"type": "uint16"
+									}
+								],
+								"internalType": "struct onchainAuction.settlementList",
+								"name": "paymentSettlement",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct onchainAuction.createAuctionList",
+						"name": "list",
+						"type": "tuple"
+					},
+					{
+						"internalType": "uint32",
+						"name": "startTime",
+						"type": "uint32"
+					},
+					{
+						"internalType": "uint32",
+						"name": "endTime",
+						"type": "uint32"
+					}
+				],
+				"name": "createAuction",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "auctionId",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenOwner",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tax",
+						"type": "uint256"
+					}
+				],
+				"name": "endAuction",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAdmins",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "admins",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "admin",
+						"type": "address"
+					}
+				],
+				"name": "isAdmin",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "listings",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "nftContractAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "tokenId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "quantityOf1155",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "tokenOwnerAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minimumBidCryptoPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "paymentCurrency",
+						"type": "address"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "whitelistedBuyers",
+						"type": "bytes32"
+					},
+					{
+						"internalType": "bytes32",
+						"name": "blacklistedBuyers",
+						"type": "bytes32"
+					},
+					{
+						"components": [
+							{
+								"internalType": "address",
+								"name": "paymentSettlementAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "taxSettlementAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "address",
+								"name": "platformSettlementAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint16",
+								"name": "platformFeePercentage",
+								"type": "uint16"
+							},
+							{
+								"internalType": "address",
+								"name": "commissionAddress",
+								"type": "address"
+							},
+							{
+								"internalType": "uint16",
+								"name": "commissionFeePercentage",
+								"type": "uint16"
+							}
+						],
+						"internalType": "struct onchainAuction.settlementList",
+						"name": "paymentSettlement",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "admin",
+						"type": "address"
+					}
+				],
+				"name": "revokeAdmin",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "royaltySupport",
+				"outputs": [
+					{
+						"internalType": "contract IRoyaltyEngine",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "bytes4",
+						"name": "interfaceId",
+						"type": "bytes4"
+					}
+				],
+				"name": "supportsInterface",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "auctionId",
+						"type": "string"
+					},
+					{
+						"internalType": "uint32",
+						"name": "endTime",
+						"type": "uint32"
+					}
+				],
+				"name": "updateEndTime",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "auctionId",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "minimumBidFiatPrice",
+						"type": "uint256"
+					}
+				],
+				"name": "updateMinimumPrice",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "auctionId",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "paymentSettlementAddress",
+						"type": "address"
+					}
+				],
+				"name": "updatePaymentSettlementAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_platformAddress",
+						"type": "address"
+					}
+				],
+				"name": "updatePlatformAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint16",
+						"name": "_platformFeePercentage",
+						"type": "uint16"
+					}
+				],
+				"name": "updatePlatformFeePercentage",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "auctionId",
+						"type": "string"
+					},
+					{
+						"internalType": "uint32",
+						"name": "startTime",
+						"type": "uint32"
+					}
+				],
+				"name": "updateStartTime",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "auctionId",
+						"type": "string"
+					},
+					{
+						"internalType": "address",
+						"name": "taxSettlementAddress",
+						"type": "address"
+					}
+				],
+				"name": "updateTaxSettlementAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "withdraw",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"stateMutability": "payable",
+				"type": "receive"
+			}
+		],
+		"devdoc": {
+			"events": {
+				"RoyaltyPayout(address,uint256,address,uint256)": {
+					"params": {
+						"amount": "Amount sent to the royalty recipient address",
+						"recipient": "Address of the Royalty Recipient",
+						"tokenContract": "The NFT Contract address",
+						"tokenId": "The NFT tokenId"
+					}
+				}
+			},
+			"kind": "dev",
+			"methods": {
+				"approveAdmin(address)": {
+					"details": "See {IAdminControl-approveAdmin}."
+				},
+				"bid(string,uint256,bytes32[])": {
+					"params": {
+						"auctionId": "the id if the created auction",
+						"bidAmount": "the amount of to the bid"
+					}
+				},
+				"cancelAuction(string)": {
+					"params": {
+						"auctionId": "to cansel the sale"
+					}
+				},
+				"constructor": {
+					"params": {
+						"_platformAddress": "The Platform Address",
+						"_platformFeePercentage": "The Platform fee percentage"
+					}
+				},
+				"getAdmins()": {
+					"details": "See {IAdminControl-getAdmins}."
+				},
+				"isAdmin(address)": {
+					"details": "See {IAdminControl-isAdmin}."
+				},
+				"owner()": {
+					"details": "Returns the address of the current owner."
+				},
+				"renounceOwnership()": {
+					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions anymore. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby removing any functionality that is only available to the owner."
+				},
+				"revokeAdmin(address)": {
+					"details": "See {IAdminControl-revokeAdmin}."
+				},
+				"supportsInterface(bytes4)": {
+					"details": "See {IERC165-supportsInterface}."
+				},
+				"transferOwnership(address)": {
+					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
+				},
+				"updatePlatformAddress(address)": {
+					"params": {
+						"_platformAddress": "The Platform Address"
+					}
+				},
+				"updatePlatformFeePercentage(uint16)": {
+					"params": {
+						"_platformFeePercentage": "The Platform fee percentage"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"RoyaltyPayout(address,uint256,address,uint256)": {
+					"notice": "Emitted when an Royalty Payout is executed"
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"bid(string,uint256,bytes32[])": {
+					"notice": "bid, making a bid of a token in created auction"
+				},
+				"cancelAuction(string)": {
+					"notice": "cancel the sale of a listed token"
+				},
+				"updatePlatformAddress(address)": {
+					"notice": "Update the platform Address"
+				},
+				"updatePlatformFeePercentage(uint16)": {
+					"notice": "Update the Platform Fee Percentage"
+				},
+				"withdraw()": {
+					"notice": "Withdraw the funds to owner"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/mojito/sothebys/auction.sol": "onchainAuction"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 25
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/manifold/creator-core/core/ICreatorCore.sol": {
+			"keccak256": "0x61a300259ca1484e05b04ece0acc97b9dbf5fbdd7b3d20a6892d8a1d3052362f",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://59981fee263486519a6e698f4f8ad5ee8af7c0668aee8bf335d285a06c3b02bb",
+				"dweb:/ipfs/QmabGX8ERpimg3K8w5uSbVqdLXMo6fgizMmVyPPXazmJco"
+			]
+		},
+		"contracts/manifold/libraries-solidity/access/AdminControl.sol": {
+			"keccak256": "0xb68b61908cd18eba910850227ccf473343ef4eda3bae2d0c9a74d3dc7323b51e",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://602561a7124fd337ad20157f04e5f8c615601e3e374485deb37ae02902de4420",
+				"dweb:/ipfs/QmP2VkTq5BTK3GNocQH4otfTbazq1VictwGR5rnpRzJk66"
+			]
+		},
+		"contracts/manifold/libraries-solidity/access/IAdminControl.sol": {
+			"keccak256": "0x13addc422ab45458b8ef38088ca34f8f788d94d946578f0576e2f2ddb3d9cde1",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://5aa10662ce262820ff173773f8a5f78ef0e2ba8aaf328804c3fe6903e43b7782",
+				"dweb:/ipfs/QmctJDefviJUDmj2jQAAD3esgTyBrrxt3W1d6eGToAShjP"
+			]
+		},
+		"contracts/mojito/sothebys/auction.sol": {
+			"keccak256": "0x721b9e8285a54ea9ade80a3cdb30dc846a2599384fac75c8a67539d13397020b",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://596040c17339f401b8ca062704e9ce52b247d204065d0b1d607354f6791fe09c",
+				"dweb:/ipfs/QmbtYh68F9A3mXf1p235xnDG3a3FQ6TaCdeDvpjLaNjzTT"
+			]
+		},
+		"contracts/openzeppelin/access/Ownable.sol": {
+			"keccak256": "0x1cae4f85f114ff17b90414f5da67365b1d00337abb5bce9bf944eb78a2c0673c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d5ff16b336ce8f906478d5f2eecc6435e00833bdc0b92f6b209cf9e92cb5b2b7",
+				"dweb:/ipfs/QmRD1rAZEqQ73C33cdA3QoUyBDMEWnNKNMc6PNkAZWHeQQ"
+			]
+		},
+		"contracts/openzeppelin/security/ReentrancyGuard.sol": {
+			"keccak256": "0x1278c76b840063ff5e14a2d7c5707812c1eabc2342ed040bf862c2d7552102fe",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b9989233808b8f475395f71ea757e277fa167cdac8a24d10f9784783defd313c",
+				"dweb:/ipfs/Qmdg6rbPsShpnzvqKmPVuFk7eYU53oXTPxqUJXd9WLD4vg"
+			]
+		},
+		"contracts/openzeppelin/token/ERC1155/IERC1155.sol": {
+			"keccak256": "0xf920acc579a6c2067ca587b8d3993f6e737ac54f2dc3c4cd179d8df0e3f351d9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://900486cb37c3b173462e4d5929a7df08ef91d9ee544176cfa25189f3b556641e",
+				"dweb:/ipfs/QmTMbsipusiSnqiUj9wnPjwdzUALoKhmVGRhhcYn36jGJg"
+			]
+		},
+		"contracts/openzeppelin/token/ERC20/IERC20.sol": {
+			"keccak256": "0xc1452b054778f1926419196ef12ae200758a4ee728df69ae1cd13e5c16ca7df7",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4cb252ec7657ba7a91be688cbd263090aa5379e504f488a62d06198e0d630322",
+				"dweb:/ipfs/QmW56fDiDirhWfWiKrycXE5UY6tTNtFrYx39ipnSs8mkYb"
+			]
+		},
+		"contracts/openzeppelin/token/ERC20/utils/SafeERC20.sol": {
+			"keccak256": "0x671741933530f343f023a40e58e61bc09d62494b96c6f3e39e647f315facd519",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4082ea29d4cab3998038c2c5e37ed990e009a6d8814bbe82931173db7b6e63d5",
+				"dweb:/ipfs/QmaAwSn8ubftkwEYP3iU14f8VP7texzjWDXbopEEvm8LQF"
+			]
+		},
+		"contracts/openzeppelin/token/ERC721/IERC721.sol": {
+			"keccak256": "0x872ba21af7c1f0ae04a715beca31e8fcac764d6c8762940b0fe1bfb6ed8e86f4",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://497017741d74878b56a67ad51e98061bd9ec0e6e4fdbfef0e2ab51523f4c16de",
+				"dweb:/ipfs/QmWfkpRHksy8jFywqYxdmMqdkQ1hxrGTPoNBXbZ48zTvyv"
+			]
+		},
+		"contracts/openzeppelin/utils/Address.sol": {
+			"keccak256": "0x9944d1038f27dcebff810d7ba16b3b8058b967173d76874fb72dd7cd84129656",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://7c455cda07c5f8978c57e545ddde382552d3a55b6e3682e0f809ed07ec7defbe",
+				"dweb:/ipfs/QmXkoKbxyMcMzjYdkXi5t4t3ZjBQ81pj7AaanS9jhePxyt"
+			]
+		},
+		"contracts/openzeppelin/utils/Context.sol": {
+			"keccak256": "0x7736c187e6f1358c1ea9350a2a21aa8528dec1c2f43b374a9067465a3a51f5d3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4fd625dca17657403af518cc6c8ab5c54c58898cf6e912ca2e1b0f3194ad0405",
+				"dweb:/ipfs/QmQVv7YeeKmaS11bg7YDTeeGDk6i7sV8LMMfohaLM4SiRu"
+			]
+		},
+		"contracts/openzeppelin/utils/cryptography/MerkleProof.sol": {
+			"keccak256": "0x972240f593e01b2fae2e90c5b94260f4971f03076363a38a3f4fff105efbba8b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b30e18f10f56b137384de1430e8dfea0756dc9ec226e9c1aba1cc2e6fccd11ec",
+				"dweb:/ipfs/QmWiRwro1rdrnRWZVdXcofSV1YhaopMF53pnZyU4FYCmGn"
+			]
+		},
+		"contracts/openzeppelin/utils/introspection/ERC165.sol": {
+			"keccak256": "0x905cd0ecd91d1de79a4679d745b79cf852ca8ccda5d25d1c49c6bd17a5edc0cf",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://8dd1601fcd370546d8c06ea1902d7e7364fc490fbf0ebc3004230ef1f5db473c",
+				"dweb:/ipfs/Qmb8zbC3TjWFtcuyP3KEEaegMkPcfeKAcPrwzvkAoMR3cZ"
+			]
+		},
+		"contracts/openzeppelin/utils/introspection/IERC165.sol": {
+			"keccak256": "0x6aa521718bf139b44ce56f194f6aea1d590cacef995b5a84703fb1579fa49be9",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://100f8d367b5e94eb9cb991914f1de133cf272654c0708faa893bbc17a5b35b93",
+				"dweb:/ipfs/QmZeBojmgXq821dL1TJKFb58B1FogM9jL3u7hXQ8hTEBKT"
+			]
+		},
+		"contracts/openzeppelin/utils/structs/EnumerableSet.sol": {
+			"keccak256": "0xfac19be5f0d198ac556731a5589a4ae1c0c1622437d0b6b53b2cf3f317071acd",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0c0f5ca56c1bfe37e9a9911140681e98c360f9fd225d06fcf2c607169ac76b3b",
+				"dweb:/ipfs/QmZYRcvZqTiLcgGRx66RceXNwWqeUS5bDQGNo1gS3hhwec"
+			]
+		}
+	},
+	"version": 1
+}

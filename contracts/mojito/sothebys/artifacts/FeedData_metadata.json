@@ -1,0 +1,201 @@
+{
+	"compiler": {
+		"version": "0.8.17+commit.8df45f5f"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "priceFeedAddress",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "currencyAddress",
+						"type": "address[]"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "heartbeat",
+						"type": "uint256[]"
+					},
+					{
+						"internalType": "address",
+						"name": "_admin",
+						"type": "address"
+					}
+				],
+				"stateMutability": "nonpayable",
+				"type": "constructor"
+			},
+			{
+				"inputs": [],
+				"name": "admin",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address",
+						"name": "fiat",
+						"type": "address"
+					}
+				],
+				"name": "getLatestPrice",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "value",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address[]",
+						"name": "priceFeedAddress",
+						"type": "address[]"
+					},
+					{
+						"internalType": "address[]",
+						"name": "currencyAddress",
+						"type": "address[]"
+					}
+				],
+				"name": "updatePriceFeedAddress",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "currencyAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "heartBeat",
+						"type": "uint256"
+					}
+				],
+				"name": "updateheartbeat",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {
+				"constructor": {
+					"params": {
+						"currencyAddress": "List of ERC20 Currency Address",
+						"priceFeedAddress": "List of Chainlink Aggregator Address"
+					}
+				},
+				"getLatestPrice(uint256,address)": {
+					"params": {
+						"amount": "conversion amount in usd",
+						"fiat": "ERC20 Currency Address"
+					}
+				},
+				"updatePriceFeedAddress(address[],address[])": {
+					"params": {
+						"currencyAddress": "List of ERC20 Currency Address",
+						"priceFeedAddress": "List of Chainlink Aggregator Address"
+					}
+				},
+				"updateheartbeat(address,uint256)": {
+					"params": {
+						"currencyAddress": "List of ERC20 Currency Address",
+						"heartBeat": "timeinterval to check the feed updation"
+					}
+				}
+			},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getLatestPrice(uint256,address)": {
+					"notice": "Getting the latestprice for the given currencyAddress"
+				},
+				"updatePriceFeedAddress(address[],address[])": {
+					"notice": "Update the currencyAddress with respective priceFeedAddress"
+				},
+				"updateheartbeat(address,uint256)": {
+					"notice": "Update the heartBeat with respective priceFeedAddress"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/mojito/sothebys/FeedData.sol": "FeedData"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 125
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@chainlink/contracts/src/v0.8/interfaces/AggregatorV3Interface.sol": {
+			"keccak256": "0xf2b6c9adb3552254df1445b73563cf014434ff5e78663e9b961b6c059506ceb5",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://6c1f59e0c7334c22fb54288728fc32546bdc9c8133d6db0d60223e3c28f52120",
+				"dweb:/ipfs/QmeuxawUVBhMWQJXaEhhnubCTc4Jwn5wYK8gbhq6NjrpfG"
+			]
+		},
+		"contracts/mojito/sothebys/FeedData.sol": {
+			"keccak256": "0x9d0fd4e287348ffd943f0ec9b5c09fa9f3cf4c5f9d394b10c1051c65fdcaf96a",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://1984c8a6e82cb98a34f8599da3a8cf0f9bdb60e165dac38194ad8b14e989db24",
+				"dweb:/ipfs/QmcJ635oEN5kHLtCQZyoQRshRTZLdnmecLuRCrs9rB7seF"
+			]
+		}
+	},
+	"version": 1
+}

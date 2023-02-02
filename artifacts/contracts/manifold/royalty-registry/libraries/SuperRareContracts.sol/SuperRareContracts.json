@@ -1,0 +1,50 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "SuperRareContracts",
+  "sourceName": "contracts/manifold/royalty-registry/libraries/SuperRareContracts.sol",
+  "abi": [
+    {
+      "inputs": [],
+      "name": "SUPERRARE_REGISTRY",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "SUPERRARE_V1",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "SUPERRARE_V2",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x60ec610039600b82828239805160001a60731461002c57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe730000000000000000000000000000000000000000301460806040526004361060475760003560e01c806389f796ba14604c578063d2367823146082578063f19312ff14609c575b600080fd5b606673b932a70a57673d89f4acffbe830e8ed7f75fb9e081565b6040516001600160a01b03909116815260200160405180910390f35b60667317b0c8564e53f22364a6c8de6f7ca5ce9bea4e5d81565b60667341a322b28d0ff354040e2cbc676f0320d8c8850d8156fea2646970667358221220d448e92efd2d69ea2edaf5e856f44fed2d68949d62d252f1cd0a31feaf94c7b164736f6c63430008110033",
+  "deployedBytecode": "0x730000000000000000000000000000000000000000301460806040526004361060475760003560e01c806389f796ba14604c578063d2367823146082578063f19312ff14609c575b600080fd5b606673b932a70a57673d89f4acffbe830e8ed7f75fb9e081565b6040516001600160a01b03909116815260200160405180910390f35b60667317b0c8564e53f22364a6c8de6f7ca5ce9bea4e5d81565b60667341a322b28d0ff354040e2cbc676f0320d8c8850d8156fea2646970667358221220d448e92efd2d69ea2edaf5e856f44fed2d68949d62d252f1cd0a31feaf94c7b164736f6c63430008110033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
